@@ -1,0 +1,106 @@
+.container{
+    width: 100vw;
+    height: 13vh;
+    font-size: 5vh;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.logo{
+    width: 19rem;
+    height: 5rem;
+}
+
+.iconCart {
+    filter: invert(100%);
+    width: auto;
+    height: auto;
+}
+
+.cartQuantity {
+    display: flex;
+    position: fixed;
+    top: 3.5%;
+    right: 2%;
+    background: #161837;
+    padding: 10px 7px 6px 12px;
+    border-radius: 10%;
+    border: 1px solid #FFFFFF;
+}
+
+.cartLength {
+    font-size: 0.7rem;
+    background-color: #8606fe;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 10%;
+    top: 0;
+    width: 18px;
+    height: 17px;
+    right: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-device-width: 1024px) and (min-device-width: 769px){
+
+    .container .iconCart {
+        width: 1.9rem;
+    }
+
+    .container .cartQuantity {
+        padding: 8px 8px 5px 10px; 
+    }
+
+    .container .cartLength {
+        font-size: 0.7rem;
+        width: 17px;
+        height: 15px;
+    }
+}
+
+@media screen and (max-device-width: 768px) and (min-device-width: 461px){
+    
+    .container .iconCart {
+        width: 2rem;
+    }
+
+    .container .cartQuantity {
+        padding: 6px 8px 5px 10px;
+    }
+
+    .container .cartLength {
+        font-size: 0.7rem;
+        width: 15px;
+        height: 12px;
+        padding: 6%;
+    }
+}
+
+@media screen and (max-device-width: 460px){
+
+    .container .logo{
+        width: 65vw;
+        height: auto;
+    }
+
+    .container .iconCart {
+        width: 6.5vw;
+        height: 5vh;
+    }
+
+    .container .cartQuantity {
+        padding: 1.1vw 1.5vw 0vw 1.8vw;
+    }
+
+    .container .cartLength {
+        font-size: 2.1vw;
+        width: 40%;
+        height: 40%;
+        padding-right: 2px;
+    }
+}

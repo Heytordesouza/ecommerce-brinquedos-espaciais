@@ -1,0 +1,126 @@
+.container{
+    position: relative;
+    bottom: 0;
+    display: flex;
+    width: 100vw;
+    height: auto;
+    color: #FFFFFF;
+    background-color: #000000;
+    padding: 1vh 0 1vh 0;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.firstColumn{
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1vh;
+}
+
+.logo{
+    width: 15vw;
+    height: max-content;
+}
+
+.name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.created{
+    font-size: 0.7vw;
+}
+
+.createdName{
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+.secondColumn{
+    display: flex;
+    width: 5%;
+    font-size: 1vw;
+}
+
+.thirdColumn{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.5vh; 
+}
+
+.imgSocial{
+    display: flex;
+    width: 8%;
+    height: 8%;
+    gap: 20%;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15%;  
+}
+
+.linha{
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-device-width: 768px) and (min-device-width: 461px) {
+    
+    .firstColumn .logo{
+        width: 22vw;
+    }
+
+    .name .created{
+        font-size: 1vw;
+    }
+
+    .name .createdName{
+        font-size: 1.3vw;
+    }
+
+    .secondColumn{
+        font-size: 1.3vw;
+    }
+
+    .imgSocial{
+        width: 12%;
+        height: 12%;
+    }
+}
+
+@media screen and (max-device-width: 460px){
+    
+    .firstColumn .logo {
+        width: 45vw;
+        height: max-content;
+    }
+    
+
+    .name .created{
+        font-size: 2vw;
+    }
+
+    .name .createdName{
+        font-size: 2.5vw;
+    }
+
+    .secondColumn{
+        font-size: 2.3vw;
+    }
+
+    .imgSocial{
+        width: 22%;
+        height: 22%;
+    }
+}
+
