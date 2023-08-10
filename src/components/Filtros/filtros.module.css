@@ -1,0 +1,196 @@
+.container {
+    position: sticky;
+    top: 15px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    padding: 0.7em;
+    height: 17em;
+    width: 12em;
+    min-width: 8em;
+    color: #FFFFFF;
+    background: #161837;
+    border-radius: 15px;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.title {
+    height: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+}
+
+.containerInput {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6%;
+    gap: 2px;
+}
+
+.input {
+    width: 95%;
+    height: 1.4rem;
+    border-radius: 5px;
+}
+
+.select {
+    width: 98%;
+    height: 1.7rem;
+    border-radius: 5px;
+}
+
+
+@media screen and (max-device-width: 768px) and (min-device-width: 461px) {
+    .container {
+        position: relative;
+        top: auto;
+        left: auto;
+        justify-content: center;
+        align-items: center;
+        width: 70vw;
+        height: 32vw;
+        padding: 0% 3% 0% 2%;
+        margin: 2vh auto 2vh auto;
+    }
+
+
+    .title {
+        font-size: 3.5vw;
+        height: 4vh;
+        margin-top: 5%;
+        margin-bottom: 1%;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        gap: 8%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .primeiraColuna {
+        width: 40vw;
+        height: 100%;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-left: 1vw;
+    }
+
+    .segundaColuna {
+        width: 40vw;
+        height: 100%;
+    }
+
+    .containerInput {
+        flex-direction: column;
+        width: 30vw;
+        height: 38%;
+        font-size: 2.4vw;
+        gap: 3px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input {
+        width: 30vw;
+        height: 100%;
+        font-size: 2.5vw;
+        text-align: center;
+    }
+
+    .select {
+        width: 30.5vw;
+        height: 100%;
+        font-size: 2vw;
+        text-align: center;
+        justify-content: center;
+    }
+
+}
+
+
+@media screen and (max-device-width: 460px) {
+    .container {
+        position: relative;
+        top: auto;
+        left: auto;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+        height: 40vw;
+        padding: 2% 2% 3% 1.2%;
+        margin: 0.5vh auto 2vh auto;
+    }
+
+    .title {
+        font-size: 5vw;
+        height: 1vh;
+        margin-top: 1%;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        gap: 8%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+    }
+
+    .primeiraColuna {
+        width: 40vw;
+        height: 90%;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-left: 1vw;
+    }
+
+    .segundaColuna {
+        width: 40vw;
+        height: 90%;
+    }
+
+    .containerInput {
+        flex-direction: column;
+        width: 40vw;
+        height: 45%;
+        font-size: 3vw;
+        gap: 3px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input {
+        width: 38vw;
+        height: 100%;
+        font-size: 3vw;
+        text-align: center;
+    }
+
+    .select {
+        width: 39.5vw;
+        height: 100%;
+        font-size: 3vw;
+        text-align: center;
+        justify-content: center;
+    }
+
+}

@@ -1,0 +1,153 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    min-height: 82vh;
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 1vw;
+    margin-top: 0 auto;
+    margin-bottom: 2vh;
+    justify-content: center;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    width: 13.5rem;
+    height: 17.5rem;
+    background: #FFFFFF;
+    border-radius: 15px;
+    color: #000000;
+    border: 1px solid #000000;
+    align-items: center;
+    gap: 0px;
+}
+
+.imagemProduto {
+    width: 10.5rem;
+    height: 10.5rem;
+    margin-top: 10px;
+}
+
+.imagemProduto:hover {
+    transition: all .2s ease-in-out;
+    transform: scale(1.1);
+}
+
+.nome {
+    font-family: 'Signika Negative', sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 90%;
+    justify-content: space-between;
+    margin-top: 0.65rem;
+    font-size: 0.8rem;
+    height: 8rem;
+}
+
+.endCard {
+    display: flex;
+    flex-direction: row;
+    width: 12.5rem;
+    height: 10rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.value {
+    font-family: 'Signika Negative', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-left: 15px;
+}
+
+.button {
+    font-family: 'Signika Negative', sans-serif;
+    width: 2.5rem;
+    height: 2.3rem;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    background-color: #161837;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.button .iconCart {
+    filter: invert(100%);
+    width: auto;
+    height: auto;
+    max-width: 70%;
+    margin: 5px 1px 0 0;
+}
+
+.button:hover {
+    background-color: #07dfff;
+    color: #000000;
+}
+
+.button:active {
+    background-color: #261fff;
+    color: #FFFFFF;
+}
+
+@media screen and (max-device-width: 768px) and (min-device-width: 461px) {
+    .main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section {
+        width: 100vw;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-device-width: 460px) {
+
+    .main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cards {
+        width: 45%;
+        height: inherit;
+    }
+
+    .cards .imagemProduto {
+        width: 80%;
+        height: 100%;
+    }
+
+    .nome {
+        font-size: 3vw;
+        height: 15%;
+    }
+
+    .endCard {
+        width: 85%;
+        gap: 20%;
+        height: 16%;
+        margin: 8% 0 2% 0;
+    }
+
+    .value {
+        margin-left: 3%;
+        font-size: 3.65vw;
+    }
+
+    .button {
+        width: 25%;
+        height: 95%;
+    }
+}
