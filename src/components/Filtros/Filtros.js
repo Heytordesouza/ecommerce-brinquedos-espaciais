@@ -25,12 +25,11 @@ export default function Filtros (props) {
       <div className={styles.section}>
         <div className={styles.primeiraColuna}>
           <div className={styles.containerInput}>
-            Buscar por nome:
-            <input className={styles.input} type="text" placeholder="Buscar" onChange={pesquisar} value={props.buscar} />
+            <input className={styles.input} type="text" placeholder="Buscar por nome" onChange={pesquisar} value={props.buscar} />
           </div>
-          <label className={styles.containerInput}>Ordenação:
+          <label className={styles.containerInput}>
             <select className={styles.select} value={props.ordenacao} onChange={onChangeOrdenacao}>
-              <option value="">Ordenar</option>
+              <option value="">Ordenação</option>
               <option value="crescente">Crescente</option>
               <option value="decrescente">Decrescente</option>
             </select>
@@ -38,11 +37,9 @@ export default function Filtros (props) {
         </div>
         <div className={styles.segundaColuna}>
           <div className={styles.containerInput}>
-            Valor mínimo:
             <input className={styles.input} type="number" placeholder="R$ mínimo" onChange={valMinimo} value={props.valorMinimo} />
           </div>
           <div className={styles.containerInput}>
-            Valor máximo:
             <input className={styles.input} type="number" placeholder="R$ máximo" onChange={valMaximo} value={props.valorMaximo} />
           </div>
         </div>

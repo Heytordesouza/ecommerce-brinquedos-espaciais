@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
+import {toast} from 'react-toastify'
 import Image from "next/image";
 import Link from "next/link";
 import AppContext from '../components/AppContext'
@@ -60,19 +61,65 @@ export default function Carrinho() {
         const virarString = JSON.stringify(filtroDelete)
         localStorage.setItem("local", virarString)
         setCartItems(filtroDelete)
+        toast.success('Produto apagado do carrinho',{
+            icon: "🗑️",
+            autoClose: 1500,
+        });
+    }
+
+    async function handleSearch() {
+
+        if (input === '') {
+            toast.warn('Digite algum CEP!', {
+                autoClose: 1500,
+            });
+            return;
+        }
+
+        try {
+            const response = await api.get(`${input}/json`);
+
+            if (response.data.erro === true) {
+                toast.error('CEP não encontrado!', {
+                    autoClose: 1500,
+                });
+                setInput("")
+            } else {
+                setCep(response.data)
+                setInput("");
+                setSeachCep(false)
+            }
+
+        } catch {
+            toast.error('CEP inválido!', {
+                autoClose: 1500,
+            });
+            setInput("")
+        }
     }
 
     function avisarCompraFinalizada() {
-        if (cartItems.length >= 1) {
-            alert("Compra concluida com sucesso!")
-        } else {
-            alert("Primeiro adicione itens ao carrinho")
-        }
-        const virarString = JSON.stringify([])
-        localStorage.setItem("local", virarString)
-        setCartItems([])
-        setSeachCep(true)
+        if (cartItems.length === 0)  {
+            toast.warn('Adicione produtos ao carrinho',{
+                autoClose: 2000,
+            });
+        } else if (seachCep === true){
+                toast.warn('Adicione o CEP!',{
+                    autoClose: 2000,
+                });  
+            } else {
+                const virarString = JSON.stringify([])
+                localStorage.setItem("local", virarString)
+                setCartItems([])
+                setSeachCep(true)
+                toast.success('Compra finalizada com sucesso',{
+                    autoClose: 2000,
+                    theme: 'colored',
+                });
+            }
     }
+    
+    
 
     const itemsPrice = cartItems.reduce((a, c) => {
         return a + c.qtd * c.valor
@@ -85,30 +132,7 @@ export default function Carrinho() {
     }, 0);
 
 
-    async function handleSearch() {
-
-        if (input === '') {
-            alert("Digite algum CEP!")
-            return;
-        }
-
-        try {
-            const response = await api.get(`${input}/json`);
-
-            if (response.data.erro === true) {
-                alert("CEP não encontrado!")
-                setInput("")
-            } else {
-                setCep(response.data)
-                setInput("");
-                setSeachCep(false)
-            }
-
-        } catch {
-            alert("Erro ao buscar!")
-            setInput("")
-        }
-    }
+    
 
     useEffect(() => {
         consultarItem()
