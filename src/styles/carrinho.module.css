@@ -88,7 +88,6 @@
     border-radius: 20%;
     border: none;
     cursor: pointer;
-
 }
 
 .buttonMenos:hover {
@@ -175,7 +174,7 @@
 .lixeira {
     height: 88%;
     width: 95%;
-    padding: 3px 2px 2px 1px;
+    padding: 3px 2px 2px 2px;
     border-radius: 15%;
 }
 
@@ -271,7 +270,7 @@
     cursor: pointer;
     border: none;
     display: flex;
-    background-color: #000000;
+    background-color: #FFFFFF;
     justify-content: center;
     align-items: center;
     height: 1.9vw;
@@ -280,7 +279,7 @@
 .excluir {
     width: 100%;
     height: 1.3vw;
-    padding-top: 4%;
+    padding-top: 3%;
 }
 
 .buttonClose:hover {
@@ -352,6 +351,88 @@
 .buttonEnd:active {
     background-color: #008000;
     color: #FFFFFF;
+}
+
+.container_payment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    min-height: 100vh;
+}
+
+.container_payment form {
+    padding: 20px;
+    width: 700px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+}
+
+.container_payment form .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.container_payment form .row .col {
+    flex: 1 1 250px;
+}
+
+.container_payment form .row .col .title {
+    font-size: 20px;
+    color: #333;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.container_payment form .row .col .inputBox {
+    margin: 15px 0;
+}
+
+.container_payment form .row .col .inputBox span {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.container_payment form .row .col .inputBox input {
+    width: 90%;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    font-size: 15px;
+    text-transform: none;
+}
+
+.container_payment form .row .col .inputBox input:focus {
+    border: 1px solid #000;
+}
+
+.container_payment form .row .col .flex {
+    display: flex;
+    gap: 15px;
+}
+
+.container_payment form .row .col .flex .inputBox {
+    margin-top: 5px;
+}
+
+.container_payment form .row .col .inputBox .card_img {
+    height: 34px;
+    margin-top: 5px;
+    filter: drop-shadow(0 0 1px #000);
+}
+
+.container_payment form .submit_btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 17px;
+    background: #27ae60;
+    color: #fff;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.container_payment form .submit_btn:hover {
+    background: #2ecc71;
 }
 
 @media screen and (max-device-width: 768px) and (min-device-width: 461px) {

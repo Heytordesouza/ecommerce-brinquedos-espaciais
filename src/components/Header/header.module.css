@@ -45,10 +45,19 @@
 
 @media screen and (max-device-width: 500px){
 
+    .container{
+        height: 10vh;
+    }
+
     .container .logo{
         width: 55vw;
         height: auto;
-       
+        margin-right: 10%;
+    }
+
+    .container .cartQuantity{
+        top: 3vh;
+        right: 3.8vw; 
     }
 
     .container .iconCart {
@@ -60,6 +69,6 @@
         font-size: 3vw;
         width: 4vw;
         height: 4vw;
-        
+        margin-right: 5%;
     }
 }
