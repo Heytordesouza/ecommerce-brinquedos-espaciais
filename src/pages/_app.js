@@ -1,6 +1,10 @@
 import AppContext from '../components/AppContext';
 import { useState } from 'react';
-import './global.css'
+import { ToastContainer } from 'react-toastify';
+import {toast} from 'react-toastify'
+import '../styles/global.css'
+
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function App({ Component, pageProps }) {
 
@@ -19,6 +23,9 @@ export default function App({ Component, pageProps }) {
     const virarString = JSON.stringify(novoCarrinho)
     localStorage.setItem("local", virarString)
     setCartItems(novoCarrinho)
+    toast.success('Produto adicionado ao carrinho', {
+      autoClose: 1500,
+    });
   }
 
   const consultarItem = () => {
@@ -31,6 +38,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      <ToastContainer />
       <AppContext.Provider value={{ cartItems, setCartItems, onAdd, consultarItem }}>
         <Component {...pageProps} />
       </AppContext.Provider>

@@ -20,16 +20,28 @@ export default function Header() {
 
   return (
     <main className={styles.container}>
-      <Image priority={true} className={styles.logo} src={logo} alt="logo" />
       {router.asPath === '/' ?
-        <Link href='/carrinho' className={styles.cartQuantity}>
+        <>
+          <Image priority={true} className={styles.logo} src={logo} alt="logo" />
+          <Link href='/carrinho' className={styles.cartQuantity}>
+            <Image
+              className={styles.iconCart}
+              src={carrinhoImg}
+              alt="carrinhoImg"
+            />
+            <span className={styles.cartLength}>{countCartItems}</span>
+          </Link>
+        </>
+        :
+        <Link href='/'>
           <Image
-            className={styles.iconCart}
-            src={carrinhoImg}
-            alt="carrinhoImg"
-          />
-          <span className={styles.cartLength}>{countCartItems}</span>
-        </Link> : <span />}
+            priority={true}
+            className={styles.logo}
+            src={logo}
+            alt="logo" />
+        </Link>
+      }
     </main>
   );
 };
+
