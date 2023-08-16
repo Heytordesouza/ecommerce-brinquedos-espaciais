@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 import Image from "next/image";
 import Link from "next/link";
 import AppContext from '../components/AppContext'
@@ -11,6 +11,7 @@ import carrinhoImg from "../../public/img/carrinho-icon.png"
 import lixeira from "../../public/img/lixeira.png"
 import excluir from "../../public/img/excluir.png"
 import lupa from "../../public/img/lupa.png"
+import cardImg from "../../public/img/card_img.png"
 
 export default function Carrinho() {
     const context = useContext(AppContext)
@@ -61,7 +62,7 @@ export default function Carrinho() {
         const virarString = JSON.stringify(filtroDelete)
         localStorage.setItem("local", virarString)
         setCartItems(filtroDelete)
-        toast.success('Produto apagado do carrinho',{
+        toast.success('Produto apagado do carrinho', {
             icon: "🗑️",
             autoClose: 1500,
         });
@@ -99,27 +100,27 @@ export default function Carrinho() {
     }
 
     function avisarCompraFinalizada() {
-        if (cartItems.length === 0)  {
-            toast.warn('Adicione produtos ao carrinho',{
+        if (cartItems.length === 0) {
+            toast.warn('Adicione produtos ao carrinho', {
                 autoClose: 2000,
             });
-        } else if (seachCep === true){
-                toast.warn('Adicione o CEP!',{
-                    autoClose: 2000,
-                });  
-            } else {
-                const virarString = JSON.stringify([])
-                localStorage.setItem("local", virarString)
-                setCartItems([])
-                setSeachCep(true)
-                toast.success('Compra finalizada com sucesso',{
-                    autoClose: 2000,
-                    theme: 'colored',
-                });
-            }
+        } else if (seachCep === true) {
+            toast.warn('Adicione o CEP!', {
+                autoClose: 2000,
+            });
+        } else {
+            const virarString = JSON.stringify([])
+            localStorage.setItem("local", virarString)
+            setCartItems([])
+            setSeachCep(true)
+            toast.success('Compra finalizada com sucesso', {
+                autoClose: 2000,
+                theme: 'colored',
+            });
+        }
     }
-    
-    
+
+
 
     const itemsPrice = cartItems.reduce((a, c) => {
         return a + c.qtd * c.valor
@@ -132,7 +133,7 @@ export default function Carrinho() {
     }, 0);
 
 
-    
+
 
     useEffect(() => {
         consultarItem()
@@ -221,6 +222,87 @@ export default function Carrinho() {
                         <div className={styles.buttonEnd} onClick={avisarCompraFinalizada}>Finalizar compra</div>
                     </div>
                 </section>
+                <div className={styles.container_payment}>
+
+                    <form action="">
+
+                        <div className={styles.row}>
+
+                            <div className={styles.col}>
+
+                                <h3 className={styles.title}>Dados Pessoais</h3>
+
+                                <div className={styles.inputBox}>
+                                    <span>Nome Completo :</span>
+                                    <input type="text" placeholder="Gustavo da Silva"/>
+                                </div>
+                                <div className={styles.inputBox}>
+                                    <span>Email :</span>
+                                    <input type="email" placeholder="example@example.com"/>
+                                </div>
+                                <div className={styles.inputBox}>
+                                    <span>Endereço :</span>
+                                    <input type="text" placeholder="Rua Bartolomeu"/>
+                                </div>
+                                <div className={styles.inputBox}>
+                                    <span>Cidade :</span>
+                                    <input type="text" placeholder="Rio de Janeiro"/>
+                                </div>
+
+                                <div className={styles.flex}>
+                                    <div className={styles.inputBox}>
+                                        <span>Estado :</span>
+                                        <input type="text" placeholder="Rio de Janeiro"/>
+                                    </div>
+                                    <div className={styles.inputBox}>
+                                        <span>CEP :</span>
+                                        <input type="text" placeholder="12.356-789"/>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div className={styles.col}>
+
+                                <h3 className={styles.title}>pagamento</h3>
+
+                                <div className={styles.inputBox}>
+                                    <span>Cartões Aceitos :</span>
+                                    <Image className={styles.card_img} src={cardImg} alt=""/>
+                                </div>
+                                <div className={styles.inputBox}>
+                                    <span>Nome no Cartão :</span>
+                                    <input type="text" placeholder="Gustavo da Silva"/>
+                                </div>
+                                <div className={styles.inputBox}>
+                                    <span>Nº do Cartão :</span>
+                                    <input type="number" placeholder="1111-2222-3333-4444"/>
+                                </div>
+                                <div className={styles.inputBox}>
+                                    <span> Mês de Validade :</span>
+                                    <input type="text" placeholder="Agosto"/>
+                                </div>
+
+                                <div className={styles.flex}>
+                                    <div className={styles.inputBox}>
+                                        <span>Ano de Validade :</span>
+                                        <input type="number" placeholder="2023"/>
+                                    </div>
+                                    <div className={styles.inputBox}>
+                                        <span>CVV :</span>
+                                        <input type="text" placeholder="123"/>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <input type="submit" value="Processar Pagamento" className={styles.submit_btn}/>
+
+                    </form>
+
+                </div>
             </main>
             <Footer />
         </>
