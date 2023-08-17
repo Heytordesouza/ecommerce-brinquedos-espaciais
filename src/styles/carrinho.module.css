@@ -1,5 +1,9 @@
 .main {
+    display: flex;
     min-height: 78vh;
+    flex-direction: row;
+    margin-bottom: 2vh;
+    align-items: flex-start;
 }
 
 .container {
@@ -7,18 +11,18 @@
     justify-content: flex-start;
     align-items: center;
     margin-top: 2%;
-    margin-left: 20%;
+    margin-left: 2%;
     display: flex;
     flex-direction: column;
     gap: 1.5vh;
     padding: 10px;
-    width: 60%;
+    width: 40%;
     margin-right: 10px;
     color: #FFFFFF;
     background: #15183799;
     border-radius: 30px;
     font-family: 'Signika Negative', sans-serif;
-    margin-bottom: 2vh;
+    margin-bottom: 0vh;
 }
 
 .title {
@@ -51,7 +55,7 @@
     border: 1px solid #000000;
     display: flex;
     justify-content: space-between;
-    width: 85%;
+    width: 95%;
     height: 15%;
     background: #FFFFFF;
     color: #000000;
@@ -357,13 +361,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 25px;
-    min-height: 100vh;
+    padding: 2.5%;
+    min-height: 40vh;
 }
 
 .container_payment form {
-    padding: 20px;
-    width: 700px;
+    padding: 2%;
+    width: 50vw;
     background: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
 }
@@ -371,34 +375,40 @@
 .container_payment form .row {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 2%;
+    margin-bottom: 4%;
 }
 
 .container_payment form .row .col {
-    flex: 1 1 250px;
+    flex: 1 1 25%;
 }
 
 .container_payment form .row .col .title {
-    font-size: 20px;
-    color: #333;
-    padding-bottom: 5px;
+    display: flex;
+    justify-content: flex-start;
+    height: 8%;
+    width: 50%;
+    font-size: 1.2vw;
+    color: #000000;
+    padding: 0 0 1% 1%;
     text-transform: uppercase;
 }
 
 .container_payment form .row .col .inputBox {
-    margin: 15px 0;
+    margin-top: 5%;
 }
 
 .container_payment form .row .col .inputBox span {
-    margin-bottom: 10px;
+    margin-bottom: 2%;
     display: block;
+    font-size: 1.4vw;
 }
 
 .container_payment form .row .col .inputBox input {
-    width: 90%;
+    width: 95%;
     border: 1px solid #ccc;
-    padding: 10px 15px;
-    font-size: 15px;
+    padding: 2.8% 1.5%;
+    font-size: 1vw;
     text-transform: none;
 }
 
@@ -407,27 +417,38 @@
 }
 
 .container_payment form .row .col .flex {
+    width: 95%;
     display: flex;
-    gap: 15px;
+    gap: 5%;
+    margin-top: 6%;
 }
 
 .container_payment form .row .col .flex .inputBox {
-    margin-top: 5px;
+    margin-top: 0;
+}
+
+.container_payment form .row .col .flex .inputBox input {
+    width: 98%;
+    border: 1px solid #ccc;
+    padding: 6% 4.5%;
+    font-size: 1vw;
+    text-transform: none;
 }
 
 .container_payment form .row .col .inputBox .card_img {
-    height: 34px;
-    margin-top: 5px;
+    width: 15vw;
+    height: auto;
+    margin-top: 0.5px;
     filter: drop-shadow(0 0 1px #000);
 }
 
 .container_payment form .submit_btn {
     width: 100%;
-    padding: 12px;
-    font-size: 17px;
+    padding: 2%;
+    font-size: 1vw;
     background: #27ae60;
     color: #fff;
-    margin-top: 5px;
+    margin-top: 1%;
     cursor: pointer;
 }
 

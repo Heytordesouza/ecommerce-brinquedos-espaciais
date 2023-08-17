@@ -244,19 +244,27 @@ export default function Carrinho() {
                                     <span>Endereço :</span>
                                     <input type="text" placeholder="Rua Bartolomeu"/>
                                 </div>
-                                <div className={styles.inputBox}>
-                                    <span>Cidade :</span>
-                                    <input type="text" placeholder="Rio de Janeiro"/>
-                                </div>
 
                                 <div className={styles.flex}>
                                     <div className={styles.inputBox}>
-                                        <span>Estado :</span>
+                                        <span>Nº :</span>
+                                        <input type="text" placeholder="355"/>
+                                    </div>
+                                    <div className={styles.inputBox}>
+                                        <span>Complemento :</span>
+                                        <input type="text" placeholder="Apartamento 10"/>
+                                    </div>
+                                </div>
+                                
+
+                                <div className={styles.flex}>
+                                    <div className={styles.inputBox}>
+                                        <span>Cidade :</span>
                                         <input type="text" placeholder="Rio de Janeiro"/>
                                     </div>
                                     <div className={styles.inputBox}>
-                                        <span>CEP :</span>
-                                        <input type="text" placeholder="12.356-789"/>
+                                        <span>Estado :</span>
+                                        <input type="text" placeholder="RJ"/>
                                     </div>
                                 </div>
 
