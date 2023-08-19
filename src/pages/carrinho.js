@@ -175,21 +175,38 @@ export default function Carrinho() {
                             </div>
                         )
                     })}
+
+
+                    <div className={styles.end}>
+                        <button className={styles.buttonHome}>
+                            <Link className={styles.linkHome} href='/'>Continuar comprando</Link>
+                        </button>
+                        <div className={styles.buttonEnd} onClick={avisarCompraFinalizada}>Finalizar compra</div>
+                    </div>
+                </section>
+                <section className={styles.secondColumn}>
+
                     <div className={styles.lineEnd}>
                         {seachCep ?
                             <>
                                 {countCartItems > 0 ?
                                     <div className={styles.cep}>
-                                        <label>
-                                            <input className={styles.input}
-                                                type="string"
-                                                placeholder="Buscar cep"
-                                                onChange={(e) => setInput(e.target.value)}
-                                                value={input}
-                                            />
-                                        </label>
-                                        <div className={styles.buttonCep} onClick={handleSearch}>
-                                            <Image className={styles.lupa} src={lupa} alt="lupa" />
+
+                                        <span className={styles.total}>Total:
+                                            <span className={styles.totalValue}> R$ {totalPrice.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</span>
+                                        </span>
+                                        <div className={styles.freightValue}>Valor do frete:
+                                            <label>
+                                                <input className={styles.input}
+                                                    type="string"
+                                                    placeholder="Buscar cep"
+                                                    onChange={(e) => setInput(e.target.value)}
+                                                    value={input}
+                                                />
+                                            </label>
+                                            <div className={styles.buttonCep} onClick={handleSearch}>
+                                                <Image className={styles.lupa} src={lupa} alt="lupa" />
+                                            </div>
                                         </div>
                                     </div>
                                     : <span />
@@ -197,6 +214,7 @@ export default function Carrinho() {
                             </>
                             :
                             <>
+                            <div className={styles.finalValue}>
                                 <div className={styles.address}>
                                     <button className={styles.buttonClose} onClick={() => setSeachCep(true)}>
                                         <Image className={styles.excluir} src={excluir} alt="excluir" />
@@ -208,109 +226,104 @@ export default function Carrinho() {
                                     <div className={styles.city}>{cep.localidade}-{cep.uf}</div>
                                     <div className={styles.freight}>Frete Gratuito</div>
                                 </div>
+                                <span className={styles.total}>Total Final c/ Frete:
+                                    <span className={styles.totalValue}> R$ {totalPrice.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</span>
+                                </span>
+                            </div>
                             </>
                         }
                     </div>
 
+                    <div className={styles.container_payment}>
 
-                    <p className={styles.total}>Total: R${totalPrice.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</p>
+                        <form action="">
 
-                    <div className={styles.end}>
-                        <button className={styles.buttonHome}>
-                            <Link className={styles.linkHome} href='/'>Continuar comprando</Link>
-                        </button>
-                        <div className={styles.buttonEnd} onClick={avisarCompraFinalizada}>Finalizar compra</div>
+                            <div className={styles.row}>
+
+                                <div className={styles.col}>
+
+                                    <h3 className={styles.title}>Dados Pessoais</h3>
+
+                                    <div className={styles.inputBox}>
+                                        <span>Nome Completo :</span>
+                                        <input type="text" placeholder="Gustavo da Silva" />
+                                    </div>
+                                    <div className={styles.inputBox}>
+                                        <span>Email :</span>
+                                        <input type="email" placeholder="example@example.com" />
+                                    </div>
+                                    <div className={styles.inputBox}>
+                                        <span>Endereço :</span>
+                                        <input type="text" placeholder="Rua Bartolomeu" />
+                                    </div>
+
+                                    <div className={styles.flex}>
+                                        <div className={styles.inputBox}>
+                                            <span>Nº :</span>
+                                            <input type="text" placeholder="355" />
+                                        </div>
+                                        <div className={styles.inputBox}>
+                                            <span>Complemento :</span>
+                                            <input type="text" placeholder="Apartamento 10" />
+                                        </div>
+                                    </div>
+
+
+                                    <div className={styles.flex}>
+                                        <div className={styles.inputBox}>
+                                            <span>Cidade :</span>
+                                            <input type="text" placeholder="Rio de Janeiro" />
+                                        </div>
+                                        <div className={styles.inputBox}>
+                                            <span>Estado :</span>
+                                            <input type="text" placeholder="RJ" />
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div className={styles.col}>
+
+                                    <h3 className={styles.title}>pagamento</h3>
+
+                                    <div className={styles.inputBox}>
+                                        <span>Cartões Aceitos :</span>
+                                        <Image className={styles.card_img} src={cardImg} alt="" />
+                                    </div>
+                                    <div className={styles.inputBox}>
+                                        <span>Nome no Cartão :</span>
+                                        <input type="text" placeholder="Gustavo da Silva" />
+                                    </div>
+                                    <div className={styles.inputBox}>
+                                        <span>Nº do Cartão :</span>
+                                        <input type="number" placeholder="1111-2222-3333-4444" />
+                                    </div>
+                                    <div className={styles.inputBox}>
+                                        <span> Mês de Validade :</span>
+                                        <input type="text" placeholder="Agosto" />
+                                    </div>
+
+                                    <div className={styles.flex}>
+                                        <div className={styles.inputBox}>
+                                            <span>Ano de Validade :</span>
+                                            <input type="number" placeholder="2023" />
+                                        </div>
+                                        <div className={styles.inputBox}>
+                                            <span>CVV :</span>
+                                            <input type="text" placeholder="123" />
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <input type="submit" value="Processar Pagamento" className={styles.submit_btn} />
+
+                        </form>
+
                     </div>
                 </section>
-                <div className={styles.container_payment}>
-
-                    <form action="">
-
-                        <div className={styles.row}>
-
-                            <div className={styles.col}>
-
-                                <h3 className={styles.title}>Dados Pessoais</h3>
-
-                                <div className={styles.inputBox}>
-                                    <span>Nome Completo :</span>
-                                    <input type="text" placeholder="Gustavo da Silva"/>
-                                </div>
-                                <div className={styles.inputBox}>
-                                    <span>Email :</span>
-                                    <input type="email" placeholder="example@example.com"/>
-                                </div>
-                                <div className={styles.inputBox}>
-                                    <span>Endereço :</span>
-                                    <input type="text" placeholder="Rua Bartolomeu"/>
-                                </div>
-
-                                <div className={styles.flex}>
-                                    <div className={styles.inputBox}>
-                                        <span>Nº :</span>
-                                        <input type="text" placeholder="355"/>
-                                    </div>
-                                    <div className={styles.inputBox}>
-                                        <span>Complemento :</span>
-                                        <input type="text" placeholder="Apartamento 10"/>
-                                    </div>
-                                </div>
-                                
-
-                                <div className={styles.flex}>
-                                    <div className={styles.inputBox}>
-                                        <span>Cidade :</span>
-                                        <input type="text" placeholder="Rio de Janeiro"/>
-                                    </div>
-                                    <div className={styles.inputBox}>
-                                        <span>Estado :</span>
-                                        <input type="text" placeholder="RJ"/>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div className={styles.col}>
-
-                                <h3 className={styles.title}>pagamento</h3>
-
-                                <div className={styles.inputBox}>
-                                    <span>Cartões Aceitos :</span>
-                                    <Image className={styles.card_img} src={cardImg} alt=""/>
-                                </div>
-                                <div className={styles.inputBox}>
-                                    <span>Nome no Cartão :</span>
-                                    <input type="text" placeholder="Gustavo da Silva"/>
-                                </div>
-                                <div className={styles.inputBox}>
-                                    <span>Nº do Cartão :</span>
-                                    <input type="number" placeholder="1111-2222-3333-4444"/>
-                                </div>
-                                <div className={styles.inputBox}>
-                                    <span> Mês de Validade :</span>
-                                    <input type="text" placeholder="Agosto"/>
-                                </div>
-
-                                <div className={styles.flex}>
-                                    <div className={styles.inputBox}>
-                                        <span>Ano de Validade :</span>
-                                        <input type="number" placeholder="2023"/>
-                                    </div>
-                                    <div className={styles.inputBox}>
-                                        <span>CVV :</span>
-                                        <input type="text" placeholder="123"/>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <input type="submit" value="Processar Pagamento" className={styles.submit_btn}/>
-
-                    </form>
-
-                </div>
             </main>
             <Footer />
         </>

@@ -11,7 +11,7 @@
     justify-content: flex-start;
     align-items: center;
     margin-top: 2%;
-    margin-left: 2%;
+    margin-left: 8%;
     display: flex;
     flex-direction: column;
     gap: 1.5vh;
@@ -45,9 +45,9 @@
 
 .qtdTotal {
     display: flex;
-    width: 28%;
+    width: 40%;
     justify-content: center;
-    font-size: 1.1vw;
+    font-size: 0.9vw;
     margin-bottom: 1.5%;
 }
 
@@ -104,7 +104,7 @@
 
 .qtd {
     font-weight: bold;
-    font-size: 1.3vw;
+    font-size: 1vw;
     width: 29%;
     text-align: center;
 }
@@ -142,19 +142,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.8vw;
+    font-size: 0.7vw;
 }
 
 .valueTotal {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4vw;
+    font-size: 1vw;
     font-weight: bold;
 }
 
 .name {
-    font-size: 1.1vw;
+    font-size: 0.8vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -190,34 +190,68 @@
     background-color: #F72000;
 }
 
+.secondColumn{
+    display: flex;
+    flex-direction: column;
+}
+
 .lineEnd {
     display: flex;
-    width: 75%;
-    flex-direction: column;
-    height: 4vw;
-    margin-top: 1%;
+    width: 94.5%;
+    height: 9vw;
     justify-content: center;
     align-items: center;
+    margin-top: 1vh;
+    margin-left: 3%;
 }
 
 .cep {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    background-color: #FFFFFF;
+    width: 60%;
+    height: 12vh;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.total {
+    width: 50%;
+    font-weight: bold;
+    justify-content: center; 
+    margin: 2% 0 3% 4.5%;
+}
+
+.totalValue{
+    font-size: 1.3vw;
+    color:#2ecc71;
+}
+
+.freightValue{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.9vw;
+    margin-right: 2%;
+   
 }
 
 .input {
     display: flex;
-    font-size: 1vw;
+    font-size: 0.8vw;
     width: 90%;
     border-radius: 7px;
     text-align: center;
-    height: 2vw;
+    height: 1.5vw;
+    margin-left: 2%;
 }
 
 .buttonCep {
     display: flex;
     border-radius: 20%;
-    height: 2.3vw;
+    height: 1.8vw;
     cursor: pointer;
 }
 
@@ -231,9 +265,18 @@
 }
 
 .lupa {
-    filter: invert(100%);
-    height: 2.3vw;
+    height: 1.8vw;
     width: 100%;
+}
+
+.finalValue{
+    display: flex;
+    width: 100%;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    margin-top: 3vh;
+    border-radius: 10px;
+    align-items: center;
 }
 
 .address {
@@ -241,7 +284,7 @@
     width: 97%;
     text-align: center;
     align-items: center;
-    background-color: #FFFFFF;
+    
     padding: 2%;
     border-radius: 10px;
 }
@@ -250,19 +293,19 @@
     display: flex;
     flex-direction: column;
     width: 53%;
-    font-size: 1vw;
+    font-size: 1.1vw;
     color: #000000;
 }
 
 .city {
     width: 32%;
-    font-size: 1vw;
+    font-size: 1.1vw;
     color: #000000;
 }
 
 .freight {
     width: 18%;
-    font-size: 1vw;
+    font-size: 1.1vw;
     display: flex;
     justify-content: flex-end;
     color: #228b22;
@@ -294,12 +337,7 @@
     background-color: #F72000
 }
 
-.total {
-    font-weight: bold;
-    font-size: 1.4vw;
-    justify-content: center;
-    margin-top: 3%;
-}
+
 
 .end {
     display: flex;
@@ -363,12 +401,14 @@
     align-items: center;
     padding: 2.5%;
     min-height: 40vh;
+    
 }
 
 .container_payment form {
     padding: 2%;
-    width: 50vw;
+    width: 42vw;
     background: #fff;
+    border-radius: 3%;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
 }
 
@@ -388,7 +428,7 @@
     justify-content: flex-start;
     height: 8%;
     width: 50%;
-    font-size: 1.2vw;
+    font-size: 0.9vw;
     color: #000000;
     padding: 0 0 1% 1%;
     text-transform: uppercase;
@@ -396,19 +436,21 @@
 
 .container_payment form .row .col .inputBox {
     margin-top: 5%;
+    
 }
 
 .container_payment form .row .col .inputBox span {
-    margin-bottom: 2%;
+    margin-bottom: 1.5%;
     display: block;
-    font-size: 1.4vw;
+    font-size: 0.9vw;
 }
 
 .container_payment form .row .col .inputBox input {
     width: 95%;
     border: 1px solid #ccc;
     padding: 2.8% 1.5%;
-    font-size: 1vw;
+    font-size: 0.8vw;
+    border-radius: 4px;
     text-transform: none;
 }
 
@@ -419,33 +461,37 @@
 .container_payment form .row .col .flex {
     width: 95%;
     display: flex;
-    gap: 5%;
-    margin-top: 6%;
+    gap: 6%;
+    margin-top: 5.9%;
 }
 
 .container_payment form .row .col .flex .inputBox {
     margin-top: 0;
 }
 
+.container_payment form .row .col .flex .inputBox span{
+    margin-bottom: 2%;
+}
+
 .container_payment form .row .col .flex .inputBox input {
     width: 98%;
     border: 1px solid #ccc;
     padding: 6% 4.5%;
-    font-size: 1vw;
+    font-size: 0.8vw;
     text-transform: none;
 }
 
 .container_payment form .row .col .inputBox .card_img {
-    width: 15vw;
+    width: 11vw;
     height: auto;
-    margin-top: 0.5px;
+    margin-top: 2.9px;
     filter: drop-shadow(0 0 1px #000);
 }
 
 .container_payment form .submit_btn {
     width: 100%;
     padding: 2%;
-    font-size: 1vw;
+    font-size: 0.8vw;
     background: #27ae60;
     color: #fff;
     margin-top: 1%;
@@ -456,10 +502,135 @@
     background: #2ecc71;
 }
 
-@media screen and (max-device-width: 768px) and (min-device-width: 461px) {
-    .container {
+@media screen and (max-device-width: 1024px) and (min-device-width: 769px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container{
+        width: 78%;
+    }
+
+    .title {
+        font-size: 3.2vw;
+    }
+
+    .qtdTotal {
+        font-size: 2.3vw;
+        width: 40%;
+    }
+
+    .product {
+        width: 95%;
+        height: 12%;
+    }
+
+    .imgProduto {
+        width: 13%;
+        height: 76%;
+        margin-left: 0%;
+    }
+
+    .firstLine {
+        width: 45%;
+    }
+
+    .buttons {
+        width: 40%;
+    }
+
+    .buttonMenos {
+        font-size: 2.2vw;
+        height: 85%;
+    }
+
+    .qtd {
+        font-size: 2.2vw;
+    }
+
+    .buttonMais {
+        font-size: 2.2vw;
+        height: 85%;
+    }
+
+    .valueSingle {
+        font-size: 1.6vw;
+    }
+
+    .valueTotal {
+        font-size: 2.3vw;
+    }
+
+    .name {
+        font-size: 1.7vw;
+    }
+
+    .buttonRemove {
+        height: 31%;
+        width: 6%;
+    }
+
+    .lineEnd {
         width: 80%;
-        margin-left: 9%;
+    }
+
+    .input {
+        width: 96%;
+        height: 3.5vw;
+        font-size: 1.8vw;
+    }
+
+    .buttonCep {
+        height: 3.9vw;
+        margin-left: 2vw;
+        margin-top: 0.2vh;
+    }
+
+    .lupa {
+        height: 3.9vw;
+    }
+
+    .address {
+        width: 100%;
+    }
+
+    .local {
+        font-size: 1.5vw;
+    }
+
+    .city {
+        font-size: 1.5vw;
+    }
+
+    .freight {
+        font-size: 1.5vw;
+    }
+
+    .total {
+        font-size: 2.4vw;
+    }
+
+    .buttonHome {
+        font-size: 1.8vw;
+        width: 13vw;
+    }
+
+    .buttonEnd {
+        font-size: 1.8vw;
+        width: 13vw;
+    }
+}
+
+@media screen and (max-device-width: 768px) and (min-device-width: 461px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .container {
+        width: 85%;
+        margin-left: 0%;
     }
 
     .title {
@@ -572,6 +743,11 @@
 }
 
 @media screen and (max-device-width: 460px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+    
     .container {
         width: 90%;
         margin-left: 2.6%;
@@ -702,5 +878,166 @@
     .buttonEnd {
         font-size: 3vw;
         width: 20vw;
+    }
+}
+
+/* Processador de Pagamentos */
+
+@media screen and (max-device-width: 1024px) and (min-device-width: 769px) {
+
+    .container_payment form {
+        width: 80vw; 
+    }
+
+    .container_payment form .row .col .title {
+        font-size: 2.2vw;
+        width: 70%;
+    }
+
+    .container_payment form .row .col .inputBox span {
+        font-size: 2.3vw;
+    }
+
+    .container_payment form .row .col .inputBox input {
+        padding: 4.5% 1.5%;
+        font-size: 2.1vw;
+    }
+
+    .container_payment form .row .col .flex .inputBox input {
+        padding: 9.8% 4.5%;
+        font-size: 2.1vw;
+    }
+
+    .container_payment form .row .col .inputBox .card_img {
+        width: 28vw;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    .container_payment form .submit_btn {
+        font-size: 1.8vw;
+    }
+}
+
+@media screen and (max-device-width: 768px) and (min-device-width: 551px) {
+
+    .container_payment form {
+        width: 87vw; 
+    }
+
+    .container_payment form .row {
+        display: flex;
+        flex-direction: row;
+        
+        gap: 2%;
+        margin-bottom: 4%;
+    }
+
+    .container_payment form .row .col .title {
+        font-size: 2.2vw;
+        width: 70%;
+    }
+
+    .container_payment form .row .col .inputBox span {
+        font-size: 2.3vw;
+    }
+
+    .container_payment form .row .col .inputBox input {
+        padding: 4.5% 1.5%;
+        font-size: 2.1vw;
+    }
+
+    .container_payment form .row .col .flex .inputBox input {
+        padding: 9.8% 4.5%;
+        font-size: 2.1vw;
+    }
+
+    .container_payment form .row .col .inputBox .card_img {
+        width: 28vw;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    .container_payment form .submit_btn {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-device-width: 550px) {
+
+    .container_payment {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2.5%;
+        min-height: 80vh;
+    }
+
+    .container_payment form {
+        width: 87vw; 
+        border-radius: 10px;
+    }
+
+    .container_payment form .row {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 5px;
+        margin-bottom: 4px;
+    }
+
+    .container_payment form .row .col {
+        flex: 1 1 25%;
+        margin-bottom: 10px;
+        
+    }
+
+    .container_payment form .row .col .title {
+        font-size: 2.8vw;
+        width: 70%;
+    }
+
+    .container_payment form .row .col .inputBox {
+        margin-bottom: 15px;
+    }
+
+    .container_payment form .row .col .inputBox span {
+        font-size: 2.7vw;
+        margin-bottom: 0.9%;
+        margin-left: 0.5%;
+    }
+
+    .container_payment form .row .col .inputBox input {
+        width: 96%;
+        padding: 3.5% 1.5%;
+        font-size: 2.5vw;
+        border-radius: 6px;
+        margin-bottom: 1.6px;
+        
+    }
+
+    .container_payment form .row .col .flex {
+        width: 98%;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        margin-top: 0px;
+    }
+
+    .container_payment form .row .col .flex .inputBox input {
+        padding: 3.8% 1.5%;
+        font-size: 2.5vw;
+    }
+
+    .container_payment form .row .col .inputBox .card_img {
+        width: 28vw;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    .container_payment form .submit_btn {
+        padding: 4%;
+        font-size: 2.5vw;
+        margin-top: 0;
     }
 }
