@@ -177,12 +177,11 @@ export default function Carrinho() {
                     })}
 
 
-                    <div className={styles.end}>
-                        <button className={styles.buttonHome}>
-                            <Link className={styles.linkHome} href='/'>Continuar comprando</Link>
-                        </button>
-                        <div className={styles.buttonEnd} onClick={avisarCompraFinalizada}>Finalizar compra</div>
-                    </div>
+                    
+                    <button className={styles.buttonHome}>
+                        <Link className={styles.linkHome} href='/'>Continuar comprando</Link>
+                    </button>
+                    
                 </section>
                 <section className={styles.secondColumn}>
 
@@ -318,7 +317,7 @@ export default function Carrinho() {
 
                             </div>
 
-                            <input type="submit" value="Processar Pagamento" className={styles.submit_btn} />
+                            <div className={styles.submit_btn} onClick={avisarCompraFinalizada}>Processar Pagamento</div>
 
                         </form>
 
