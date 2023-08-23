@@ -55,6 +55,13 @@
         margin-right: 10%;
     }
 
+    .container .logoCarrinho{
+        width: 56vw;
+        height: auto;
+        margin-right: 10%;
+        margin-top: 4%;
+    }
+
     .container .cartQuantity{
         top: 3vh;
         right: 3.8vw; 

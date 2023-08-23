@@ -259,7 +259,7 @@ export default function Carrinho() {
                                     <div className={styles.flex}>
                                         <div className={styles.inputBox}>
                                             <span>Nº :</span>
-                                            <input type="text" placeholder="355" />
+                                            <input type="number" placeholder="355" />
                                         </div>
                                         <div className={styles.inputBox}>
                                             <span>Complemento :</span>
@@ -309,7 +309,7 @@ export default function Carrinho() {
                                         </div>
                                         <div className={styles.inputBox}>
                                             <span>CVV :</span>
-                                            <input type="text" placeholder="123" />
+                                            <input type="number" placeholder="123" />
                                         </div>
                                     </div>
 

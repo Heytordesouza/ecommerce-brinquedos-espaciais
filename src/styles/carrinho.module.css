@@ -342,9 +342,8 @@
     padding: 2%;
     font-size: 0.8vw;
     text-align: center;
-    background: #a407ff;
+    background-color: #a407ff;
     color: #fff;
-    margin-top: 1%;
     cursor: pointer;
     border-radius: 5px;
 }
@@ -355,10 +354,6 @@
 
 .buttonHome:active {
     background-color: #4b0082;
-}
-
-.buttonHome:active .linkHome {
-    color: #FFFFFF
 }
 
 .linkHome {
@@ -781,7 +776,7 @@
     }
     
     .container {
-        width: 90%;
+        width: 95%;
         margin-left: 2.6%;
     }
 
@@ -812,7 +807,7 @@
 
     .buttons {
         width: 82%;
-        margin-left: 1%;
+        margin-left: 3%;
     }
 
     .buttonMenos {
@@ -850,7 +845,7 @@
     .buttonRemove {
         height: 32%;
         width: 7%;
-        margin-right: 1%;
+        margin-right: 2%;
         padding-left: 0px;
     }
 
@@ -865,7 +860,7 @@
     }
 
     .cep {
-        width: 90%;
+        width: 98%;
         height: 22vw;
     }
     
@@ -900,7 +895,7 @@
     }
 
     .lupa {
-        height: 8vw;
+        height: 7.5vw;
     }
 
     .finalValue{
@@ -935,7 +930,10 @@
     }
 
     .buttonHome {
-        font-size: 2.5vw;
+        width: 100%;
+        padding: 4%;
+        font-size: 3vw;
+        border-radius: 12px;
     }
 }
 
@@ -1051,7 +1049,7 @@
     }
 
     .container_payment form .row .col .title {
-        font-size: 2.8vw;
+        font-size: 3.3vw;
         width: 70%;
     }
 
@@ -1060,7 +1058,7 @@
     }
 
     .container_payment form .row .col .inputBox span {
-        font-size: 2.7vw;
+        font-size: 3.3vw;
         margin-bottom: 0.9%;
         margin-left: 0.5%;
     }
@@ -1068,7 +1066,7 @@
     .container_payment form .row .col .inputBox input {
         width: 96%;
         padding: 3.5% 1.5%;
-        font-size: 2.5vw;
+        font-size: 3.3vw;
         border-radius: 6px;
         margin-bottom: 1.6px;
         
@@ -1082,9 +1080,13 @@
         margin-top: 0px;
     }
 
+    .container_payment form .row .col .flex .inputBox span {
+        margin-bottom: 1%;
+    }
+
     .container_payment form .row .col .flex .inputBox input {
         padding: 3.8% 1.5%;
-        font-size: 2.5vw;
+        font-size: 3.3vw;
     }
 
     .container_payment form .row .col .inputBox .card_img {
