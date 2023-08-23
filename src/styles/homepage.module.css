@@ -95,7 +95,6 @@
 
 .button:hover {
     background-color: #07dfff;
-    color: #000000;
 }
 
 .button:active {
@@ -114,6 +113,10 @@
         justify-content: center;
         margin-left: 0;
         margin-right: 0;
+    }
+
+    .button:hover {
+        background-color: #161837;
     }
 }
 
@@ -159,5 +162,9 @@
     .button {
         width: 25%;
         height: 95%;
+    }
+
+    .button:hover {
+        background-color: #161837;
     }
 }
