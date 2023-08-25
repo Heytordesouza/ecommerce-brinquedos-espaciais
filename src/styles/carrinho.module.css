@@ -384,7 +384,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2%;
-    margin-bottom: 4%;
+    margin-bottom: 8%;
 }
 
 .container_payment form .row .col {
@@ -403,12 +403,12 @@
 }
 
 .container_payment form .row .col .inputBox {
-    margin-top: 5%;
-    
+    margin-top: 3%;
+    height: 18%;
 }
 
 .container_payment form .row .col .inputBox span {
-    margin-bottom: 1.5%;
+    margin-bottom: 1%;
     display: block;
     font-size: 0.9vw;
 }
@@ -430,11 +430,13 @@
     width: 95%;
     display: flex;
     gap: 6%;
-    margin-top: 5.9%;
+    margin-top: 4%;
+    height: 16.5%;
 }
 
 .container_payment form .row .col .flex .inputBox {
-    margin-top: 0;
+    margin-top: 0%;
+    height: 40%;
 }
 
 .container_payment form .row .col .flex .inputBox span{
@@ -447,6 +449,13 @@
     padding: 7% 4.5%;
     font-size: 0.8vw;
     text-transform: none;
+}
+
+.erro{
+    color: rgb(255, 0, 0);
+    font-size: 0.8vw;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .container_payment form .row .col .inputBox .card_img {
@@ -947,6 +956,10 @@
         width: 80vw; 
     }
 
+    .container_payment form .row {
+        margin-bottom: 9%;
+    }
+
     .container_payment form .row .col .title {
         font-size: 2.2vw;
         width: 70%;
@@ -964,6 +977,10 @@
     .container_payment form .row .col .flex .inputBox input {
         padding: 9.8% 4.5%;
         font-size: 2vw;
+    }
+
+    .erro{
+        font-size: 1.8vw;
     }
 
     .container_payment form .row .col .inputBox .card_img {
@@ -986,9 +1003,8 @@
     .container_payment form .row {
         display: flex;
         flex-direction: row;
-        
         gap: 2%;
-        margin-bottom: 4%;
+        margin-bottom: 9%;
     }
 
     .container_payment form .row .col .title {
@@ -1014,6 +1030,10 @@
         width: 28vw;
         margin-top: 2%;
         margin-bottom: 2%;
+    }
+
+    .erro{
+        font-size: 1.8vw;
     }
 
     .container_payment form .submit_btn {
@@ -1042,7 +1062,7 @@
         flex-direction: column;
         flex-wrap: nowrap;
         gap: 5px;
-        margin-bottom: 4px;
+        margin-bottom: 1px;
     }
 
     .container_payment form .row .col {
@@ -1089,6 +1109,10 @@
     .container_payment form .row .col .flex .inputBox input {
         padding: 3.8% 1.5%;
         font-size: 3.9vw;
+    }
+
+    .erro{
+        font-size: 3.4vw;
     }
 
     .container_payment form .row .col .inputBox .card_img {

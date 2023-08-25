@@ -3,6 +3,7 @@ import { toast } from 'react-toastify'
 import { useForm } from 'react-hook-form'
 import Image from "next/image";
 import Link from "next/link";
+import { validEmail, validNumberHome, validNumberCard, validCvv } from "../utils/regex";
 import AppContext from '../components/AppContext'
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer"
@@ -28,6 +29,20 @@ export default function Carrinho() {
     const [seachCep, setSeachCep] = useState(true)
     const { register, handleSubmit, setValue } = useForm();
 
+
+
+    const [email, setEmail] = useState("");
+    const [inputEmailErr, setInputEmailErr] = useState(false);
+
+
+    const [numberHome, setNumberHome] = useState("");
+    const [inputNumberHomeErr, setInputNumberHomeErr] = useState(false);
+
+    const [numberCard, setNumberCard] = useState("");
+    const [inputNumberCardErr, setInputNumberCardErr] = useState(false);
+
+    const [cvv, setCvv] = useState("");
+    const [inputCvvErr, setInputCvvErr] = useState(false);
 
     const onRemove = (itemCarrinho) => {
         const novoCarrinho = [...cartItems]
@@ -116,23 +131,50 @@ export default function Carrinho() {
     }
 
     function avisarCompraFinalizada() {
-        if (cartItems.length === 0) {
-            toast.warn('Adicione produtos ao carrinho', {
-                autoClose: 2000,
-            });
-        } else if (seachCep === true) {
+
+        if (seachCep) {
             toast.warn('Adicione o CEP!', {
                 autoClose: 2000,
             });
+        }
+
+        if (!validEmail.test(email)) {
+            setInputEmailErr(true);
         } else {
+            setInputEmailErr(false);
+        }
+
+        if (!validNumberHome.test(numberHome)) {
+            setInputNumberHomeErr(true);
+        } else {
+            setInputNumberHomeErr(false);
+        }
+
+        if (!validNumberCard.test(numberCard)) {
+            setInputNumberCardErr(true);
+        } else {
+            setInputNumberCardErr(false);
+        }
+
+        if (!validCvv.test(cvv)) {
+            setInputCvvErr(true);
+        } else {
+            setInputCvvErr(false);
+        }
+
+        if (validEmail.test(email)
+            && validNumberHome.test(numberHome)
+            && validNumberCard.test(numberCard)
+            && validCvv.test(cvv)) {
+
             const virarString = JSON.stringify([])
             localStorage.setItem("local", virarString)
             setCartItems([])
-            setSeachCep(true)
             toast.success('Compra finalizada com sucesso', {
                 autoClose: 2000,
                 theme: 'colored',
             });
+            setSeachCep(true)
         }
     }
 
@@ -264,7 +306,13 @@ export default function Carrinho() {
                                         </div>
                                         <div className={styles.inputBox}>
                                             <span>Email :</span>
-                                            <input type="email" placeholder="example@example.com" />
+                                            <input
+                                                type="email"
+                                                placeholder="example@example.com"
+                                                value={email}
+                                                onChange={event => setEmail(event.target.value)}
+                                            />
+                                            {inputEmailErr && <p className={styles.erro}>Por favor digite um email valido!</p>}
                                         </div>
                                         <div className={styles.inputBox}>
                                             <span>Endereço :</span>
@@ -274,7 +322,13 @@ export default function Carrinho() {
                                         <div className={styles.flex}>
                                             <div className={styles.inputBox}>
                                                 <span>Nº :</span>
-                                                <input type="number" placeholder="355" />
+                                                <input
+                                                    type="number"
+                                                    placeholder="355"
+                                                    value={numberHome}
+                                                    onChange={event => setNumberHome(event.target.value)}
+                                                />
+                                                {inputNumberHomeErr && <p className={styles.erro}>Digite um número!</p>}
                                             </div>
                                             <div className={styles.inputBox}>
                                                 <span>Complemento :</span>
@@ -310,7 +364,13 @@ export default function Carrinho() {
                                         </div>
                                         <div className={styles.inputBox}>
                                             <span>Nº do Cartão :</span>
-                                            <input type="number" placeholder="1111-2222-3333-4444" />
+                                            <input
+                                                type="number"
+                                                placeholder="1111222233334444"
+                                                value={numberCard}
+                                                onChange={event => setNumberCard(event.target.value)}
+                                            />
+                                            {inputNumberCardErr && <p className={styles.erro}>Por favor digite um cartão valido!</p>}
                                         </div>
                                         <div className={styles.inputBox}>
                                             <span> Mês/Ano de Validade :</span>
@@ -318,7 +378,13 @@ export default function Carrinho() {
                                         </div>
                                         <div className={styles.inputBox}>
                                             <span>CVV :</span>
-                                            <input type="number" placeholder="123" />
+                                            <input
+                                                type="number"
+                                                placeholder="123"
+                                                value={cvv}
+                                                onChange={event => setCvv(event.target.value)}
+                                            />
+                                            {inputCvvErr && <p className={styles.erro}>Por favor digite um CVV valido!</p>}
                                         </div>
 
                                     </div>
