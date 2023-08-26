@@ -29,7 +29,8 @@ export default function Carrinho() {
     const [seachCep, setSeachCep] = useState(true)
     const { register, handleSubmit, setValue } = useForm();
 
-
+    const [name, setName] = useState("");
+    const [inputNameErr, setInputNameErr] = useState(false);
 
     const [email, setEmail] = useState("");
     const [inputEmailErr, setInputEmailErr] = useState(false);
@@ -38,8 +39,14 @@ export default function Carrinho() {
     const [numberHome, setNumberHome] = useState("");
     const [inputNumberHomeErr, setInputNumberHomeErr] = useState(false);
 
+    const [nameCard, setNameCard] = useState("");
+    const [inputNameCardErr, setInputNameCardErr] = useState(false);
+
     const [numberCard, setNumberCard] = useState("");
     const [inputNumberCardErr, setInputNumberCardErr] = useState(false);
+
+    const [validityCard, setValidityCard] = useState("");
+    const [inputValidityCardErr, setInputValidityCardErr] = useState(false);
 
     const [cvv, setCvv] = useState("");
     const [inputCvvErr, setInputCvvErr] = useState(false);
@@ -130,12 +137,33 @@ export default function Carrinho() {
         setValue('cidadeUf', '')
     }
 
+    const handleChange = (event) => {
+        const value = event.target.value;
+        let formattedValue = value.replace(/[/]/g, '');
+
+        if (formattedValue.length > 2) {
+            const parts = [];
+            for (let i = 0; i < formattedValue.length; i += 2) {
+                parts.push(formattedValue.substr(i, 2));
+            }
+            formattedValue = parts.join('/');
+        }
+
+        setValidityCard(formattedValue);
+    };
+
     function avisarCompraFinalizada() {
 
         if (seachCep) {
             toast.warn('Adicione o CEP!', {
                 autoClose: 2000,
             });
+        }
+
+        if (name.length <= 3) {
+            setInputNameErr(true);
+        } else {
+            setInputNameErr(false);
         }
 
         if (!validEmail.test(email)) {
@@ -150,10 +178,22 @@ export default function Carrinho() {
             setInputNumberHomeErr(false);
         }
 
+        if (nameCard.length <= 3) {
+            setInputNameCardErr(true);
+        } else {
+            setInputNameCardErr(false);
+        }
+
         if (!validNumberCard.test(numberCard)) {
             setInputNumberCardErr(true);
         } else {
             setInputNumberCardErr(false);
+        }
+
+        if (validityCard.length = 0) {
+            setInputValidityCardErr(true);
+        } else {
+            setInputValidityCardErr(false);
         }
 
         if (!validCvv.test(cvv)) {
@@ -162,9 +202,12 @@ export default function Carrinho() {
             setInputCvvErr(false);
         }
 
-        if (validEmail.test(email)
+        if (name.length >= 4
+            && validEmail.test(email)
             && validNumberHome.test(numberHome)
+            && nameCard.length >= 4
             && validNumberCard.test(numberCard)
+            && validityCard.length >= 1
             && validCvv.test(cvv)) {
 
             const virarString = JSON.stringify([])
@@ -302,7 +345,13 @@ export default function Carrinho() {
 
                                         <div className={styles.inputBox}>
                                             <span>Nome Completo :</span>
-                                            <input type="text" placeholder="Gustavo da Silva" />
+                                            <input
+                                                type="text"
+                                                placeholder="Gustavo da Silva"
+                                                value={name}
+                                                onChange={event => setName(event.target.value)}
+                                            />
+                                            {inputNameErr && <p className={styles.erro}>Por favor digite um nome!</p>}
                                         </div>
                                         <div className={styles.inputBox}>
                                             <span>Email :</span>
@@ -360,7 +409,13 @@ export default function Carrinho() {
                                         </div>
                                         <div className={styles.inputBox}>
                                             <span>Nome no Cartão :</span>
-                                            <input type="text" placeholder="Gustavo da Silva" />
+                                            <input
+                                                type="text"
+                                                placeholder="Gustavo da Silva"
+                                                value={nameCard}
+                                                onChange={event => setNameCard(event.target.value)}
+                                            />
+                                            {inputNameCardErr && <p className={styles.erro}>Por favor digite o nome impresso no cartão!</p>}
                                         </div>
                                         <div className={styles.inputBox}>
                                             <span>Nº do Cartão :</span>
@@ -374,7 +429,14 @@ export default function Carrinho() {
                                         </div>
                                         <div className={styles.inputBox}>
                                             <span> Mês/Ano de Validade :</span>
-                                            <input type="month" placeholder="Agosto 2026" />
+                                            <input
+                                                type="text"
+                                                placeholder="Agosto 2026"
+
+                                                value={validityCard}
+                                                onChange={handleChange}
+                                            />
+                                            {inputValidityCardErr && <p className={styles.erro}>Selecione a data de validade!</p>}
                                         </div>
                                         <div className={styles.inputBox}>
                                             <span>CVV :</span>
