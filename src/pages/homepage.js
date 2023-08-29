@@ -2,10 +2,10 @@ import React from "react";
 import { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import AppContext from '../components/AppContext'
-import Filtros from '../components/Filtros/Filtros';
+import Filter from '../components/Filter/Filter';
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer"
-import produtos from "../components/Produtos/produtos"
+import products from "../components/Products/products"
 import styles from '../styles/homepage.module.css'
 import carrinhoImg from "../../public/img/carrinho-icon.png"
 
@@ -13,50 +13,50 @@ export default function HomePage() {
 
   const context = useContext(AppContext);
   const {
-    consultarItem, onAdd
+    consultItem, onAdd
   } = context;
 
-  const [buscar, setBuscar] = useState("");
-  const [ordenacao, setOrdenacao] = useState("");
-  const [valorMinimo, setValorMinimo] = useState("");
-  const [valorMaximo, setValorMaximo] = useState("");
+  const [search, setSearch] = useState("");
+  const [ordination, setOrdination] = useState("");
+  const [minimumValue, setMinimumValue] = useState("");
+  const [maximumValue, setMaximumValue] = useState("");
 
   useEffect(() => {
-    consultarItem();
+    consultItem();
   }, []);
 
   return (
     <>
       <Header />
       <main className={styles.main}>
-        <Filtros
-          buscar={buscar}
-          setBuscar={setBuscar}
-          valorMinimo={valorMinimo}
-          setValorMinimo={setValorMinimo}
-          valorMaximo={valorMaximo}
-          setValorMaximo={setValorMaximo}
-          ordenacao={ordenacao}
-          setOrdenacao={setOrdenacao} />
+        <Filter
+          search={search}
+          setSearch={setSearch}
+          minimumValue={minimumValue}
+          setMinimumValue={setMinimumValue}
+          maximumValue={maximumValue}
+          setMaximumValue={setMaximumValue}
+          ordination={ordination}
+          setOrdination={setOrdination} />
         <section className={styles.section}>
-          {produtos.filter((produto) => {
-            return produto.nome.toLowerCase().includes(buscar.toLowerCase());
+          {products.filter((product) => {
+            return product.name.toLowerCase().includes(search.toLowerCase());
           })
-            .filter((produto) => {
-              return valorMinimo ? valorMinimo <= produto.valor : produto;
+            .filter((product) => {
+              return minimumValue ? minimumValue <= product.value : product;
             })
-            .filter((produto) => {
-              return valorMaximo ? valorMaximo >= produto.valor : produto;
+            .filter((product) => {
+              return maximumValue ? maximumValue >= product.value : product;
             })
             .sort((a, b) => {
-              if (ordenacao === "crescente") {
-                if (a.valor < b.valor) {
+              if (ordination === "growing") {
+                if (a.value < b.value) {
                   return -1;
                 } else {
                   return 1;
                 }
-              } else if (ordenacao === "decrescente") {
-                if (a.valor < b.valor) {
+              } else if (ordination === "descending") {
+                if (a.value < b.value) {
                   return 1;
                 } else {
                   return -1;
@@ -66,10 +66,10 @@ export default function HomePage() {
             .map((product) => {
               return (
                 <div className={styles.cards} key={product.id}>
-                  <Image className={styles.imagemProduto} priority={true} src={product.imagemUrl} alt="imageproduto" />
-                  <div className={styles.nome}>{product.nome}</div>
+                  <Image className={styles.imagemproduct} priority={true} src={product.imageUrl} alt="imageproduto" />
+                  <div className={styles.nome}>{product.name}</div>
                   <div className={styles.endCard}>
-                    <div className={styles.value}>R$ {product.valor.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</div>
+                    <div className={styles.value}>R$ {product.value.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</div>
                     <button className={styles.button} onClick={() => onAdd(product)}>
                       <Image
                         className={styles.iconCart}

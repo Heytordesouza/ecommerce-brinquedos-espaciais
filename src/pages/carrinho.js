@@ -1,19 +1,15 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { toast } from 'react-toastify'
-import { useForm } from 'react-hook-form'
 import Image from "next/image";
 import Link from "next/link";
-import { validEmail, validNumberHome, validNumberCard, validCvv } from "../utils/regex";
 import AppContext from '../components/AppContext'
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer"
-import api from "../services/api";
 import styles from '../styles/carrinho.module.css'
 import carrinhoImg from "../../public/img/carrinho-icon.png"
 import lixeira from "../../public/img/lixeira.png"
-import excluir from "../../public/img/excluir.png"
-import lupa from "../../public/img/lupa.png"
-import cardImg from "../../public/img/card_img.png"
+import Frete from '../components/Frete/Frete'
+import Payment from '../components/Payment/Payment'
 
 export default function Carrinho() {
     const context = useContext(AppContext)
@@ -21,35 +17,9 @@ export default function Carrinho() {
     const {
         cartItems,
         setCartItems,
-        consultarItem,
+        consultItem,
+        countCartItems
     } = context
-
-    const [input, setInput] = useState('')
-    const [cep, setCep] = useState({})
-    const [seachCep, setSeachCep] = useState(true)
-    const { register, handleSubmit, setValue } = useForm();
-
-    const [name, setName] = useState("");
-    const [inputNameErr, setInputNameErr] = useState(false);
-
-    const [email, setEmail] = useState("");
-    const [inputEmailErr, setInputEmailErr] = useState(false);
-
-
-    const [numberHome, setNumberHome] = useState("");
-    const [inputNumberHomeErr, setInputNumberHomeErr] = useState(false);
-
-    const [nameCard, setNameCard] = useState("");
-    const [inputNameCardErr, setInputNameCardErr] = useState(false);
-
-    const [numberCard, setNumberCard] = useState("");
-    const [inputNumberCardErr, setInputNumberCardErr] = useState(false);
-
-    const [validityCard, setValidityCard] = useState("");
-    const [inputValidityCardErr, setInputValidityCardErr] = useState(false);
-
-    const [cvv, setCvv] = useState("");
-    const [inputCvvErr, setInputCvvErr] = useState(false);
 
     const onRemove = (itemCarrinho) => {
         const novoCarrinho = [...cartItems]
@@ -92,148 +62,8 @@ export default function Carrinho() {
         });
     }
 
-    async function handleSearch() {
-
-        if (input === '') {
-            toast.warn('Digite algum CEP!', {
-                autoClose: 1500,
-            });
-            return;
-        }
-
-        try {
-            const response = await api.get(`${input}/json`);
-
-            if (response.data.erro === true) {
-                toast.error('CEP não encontrado!', {
-                    autoClose: 1500,
-                });
-                setInput("")
-            } else {
-                setCep(response.data)
-                setSeachCep(false)
-                setValue('endereco', response.data.logradouro)
-                setValue('bairro', response.data.bairro)
-                setValue('cidadeUf', `${response.data.localidade}-${response.data.uf}`)
-                setInput("");
-            }
-
-        } catch {
-            toast.error('CEP inválido!', {
-                autoClose: 1500,
-            });
-            setInput("")
-        }
-    }
-
-    const onSubmit = (e) => {
-        console.log(e)
-    }
-
-    const limparCep = () => {
-        setSeachCep(true)
-        setValue('endereco', '')
-        setValue('bairro', '')
-        setValue('cidadeUf', '')
-    }
-
-    const handleChange = (event) => {
-        const value = event.target.value;
-        let formattedValue = value.replace(/[/]/g, '');
-
-        if (formattedValue.length > 2) {
-            const parts = [];
-            for (let i = 0; i < formattedValue.length; i += 2) {
-                parts.push(formattedValue.substr(i, 2));
-            }
-            formattedValue = parts.join('/');
-        }
-
-        setValidityCard(formattedValue);
-    };
-
-    function avisarCompraFinalizada() {
-
-        if (seachCep) {
-            toast.warn('Adicione o CEP!', {
-                autoClose: 2000,
-            });
-        }
-
-        if (name.length <= 3) {
-            setInputNameErr(true);
-        } else {
-            setInputNameErr(false);
-        }
-
-        if (!validEmail.test(email)) {
-            setInputEmailErr(true);
-        } else {
-            setInputEmailErr(false);
-        }
-
-        if (!validNumberHome.test(numberHome)) {
-            setInputNumberHomeErr(true);
-        } else {
-            setInputNumberHomeErr(false);
-        }
-
-        if (nameCard.length <= 3) {
-            setInputNameCardErr(true);
-        } else {
-            setInputNameCardErr(false);
-        }
-
-        if (!validNumberCard.test(numberCard)) {
-            setInputNumberCardErr(true);
-        } else {
-            setInputNumberCardErr(false);
-        }
-
-        if (validityCard.length = 0) {
-            setInputValidityCardErr(true);
-        } else {
-            setInputValidityCardErr(false);
-        }
-
-        if (!validCvv.test(cvv)) {
-            setInputCvvErr(true);
-        } else {
-            setInputCvvErr(false);
-        }
-
-        if (name.length >= 4
-            && validEmail.test(email)
-            && validNumberHome.test(numberHome)
-            && nameCard.length >= 4
-            && validNumberCard.test(numberCard)
-            && validityCard.length >= 1
-            && validCvv.test(cvv)) {
-
-            const virarString = JSON.stringify([])
-            localStorage.setItem("local", virarString)
-            setCartItems([])
-            toast.success('Compra finalizada com sucesso', {
-                autoClose: 2000,
-                theme: 'colored',
-            });
-            setSeachCep(true)
-        }
-    }
-
-    const itemsPrice = cartItems.reduce((a, c) => {
-        return a + c.qtd * c.valor
-    }, 0);
-
-    const totalPrice = itemsPrice;
-
-    const countCartItems = cartItems.reduce((a, c) => {
-        return a + c.qtd
-    }, 0);
-
-
     useEffect(() => {
-        consultarItem()
+        consultItem()
     }, [])
 
     return (
@@ -260,8 +90,8 @@ export default function Carrinho() {
                                         <button className={styles.buttonMais} onClick={() => onAdicionar(itemCarrinho)}>+</button>
                                     </div>
                                     <div className={styles.value}>
-                                        <div className={styles.valueSingle} >R$ {itemCarrinho.valor.toLocaleString('pt-br', { minimumFractionDigits: 2 })} cada</div>
-                                        <div className={styles.valueTotal}>R${(itemCarrinho.valor * itemCarrinho.qtd).toLocaleString('pt-br', { minimumFractionDigits: 2 })}</div>
+                                        <div className={styles.valueSingle} >R$ {itemCarrinho.value.toLocaleString('pt-br', { minimumFractionDigits: 2 })} cada</div>
+                                        <div className={styles.valueTotal}>R${(itemCarrinho.value * itemCarrinho.qtd).toLocaleString('pt-br', { minimumFractionDigits: 2 })}</div>
                                     </div>
                                 </div>
                                 <Image className={styles.imgProduto} src={itemCarrinho.imagemUrl} alt="imageproduto" />
@@ -279,188 +109,8 @@ export default function Carrinho() {
 
                 </section>
                 <section className={styles.secondColumn}>
-
-                    <div className={styles.lineEnd}>
-                        {seachCep ?
-                            //True - Estado onde renderiza o input para digitar o cep
-                            <>
-                                {countCartItems > 0 ?
-                                    //Se tiver itens no carrinho, renderiza o input de cep
-                                    <div className={styles.cep}>
-
-                                        <span className={styles.total}>Total:
-                                            <span className={styles.totalValue}> R$ {totalPrice.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</span>
-                                        </span>
-                                        <div className={styles.freightValue}>Valor do frete:
-                                            <label>
-                                                <input className={styles.input}
-                                                    type="number"
-                                                    placeholder="Buscar cep"
-                                                    onChange={(e) => setInput(e.target.value)}
-                                                    value={input}
-                                                />
-                                            </label>
-                                            <div className={styles.buttonCep} onClick={handleSearch}>
-                                                <Image className={styles.lupa} src={lupa} alt="lupa" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    :
-                                    //Se não tiver itens no carrinho, não renderiza o input de cep
-                                    <span />
-                                }
-                            </>
-                            : //False -  Estado onde renderiza o cep encontrado
-                            <>
-                                <div className={styles.finalValue}>
-                                    <div className={styles.address}>
-                                        <button className={styles.buttonClose} onClick={limparCep}>
-                                            <Image className={styles.excluir} src={excluir} alt="excluir" />
-                                        </button>
-                                        <div className={styles.local}>
-                                            <span>{cep.logradouro}</span>
-                                            <span>{cep.bairro}</span>
-                                        </div>
-                                        <div className={styles.city}>{cep.localidade}-{cep.uf}</div>
-                                        <div className={styles.freight}>Frete Gratuito</div>
-                                    </div>
-                                    <span className={styles.total}>Total Final c/ Frete:
-                                        <span className={styles.totalValue}> R$ {totalPrice.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</span>
-                                    </span>
-                                </div>
-                            </>
-                        }
-                    </div>
-
-                    {countCartItems > 0 ?
-                        <div className={styles.container_payment}>
-
-                            <form onSubmit={handleSubmit(onSubmit)}>
-
-                                <div className={styles.row}>
-
-                                    <div className={styles.col}>
-
-                                        <h3 className={styles.title}>Dados Pessoais</h3>
-
-                                        <div className={styles.inputBox}>
-                                            <span>Nome Completo :</span>
-                                            <input
-                                                type="text"
-                                                placeholder="Gustavo da Silva"
-                                                value={name}
-                                                onChange={event => setName(event.target.value)}
-                                            />
-                                            {inputNameErr && <p className={styles.erro}>Por favor digite um nome!</p>}
-                                        </div>
-                                        <div className={styles.inputBox}>
-                                            <span>Email :</span>
-                                            <input
-                                                type="email"
-                                                placeholder="example@example.com"
-                                                value={email}
-                                                onChange={event => setEmail(event.target.value)}
-                                            />
-                                            {inputEmailErr && <p className={styles.erro}>Por favor digite um email valido!</p>}
-                                        </div>
-                                        <div className={styles.inputBox}>
-                                            <span>Endereço :</span>
-                                            <input type="text" {...register("endereco")} placeholder="Rua Bartolomeu" />
-                                        </div>
-
-                                        <div className={styles.flex}>
-                                            <div className={styles.inputBox}>
-                                                <span>Nº :</span>
-                                                <input
-                                                    type="number"
-                                                    placeholder="355"
-                                                    value={numberHome}
-                                                    onChange={event => setNumberHome(event.target.value)}
-                                                />
-                                                {inputNumberHomeErr && <p className={styles.erro}>Digite um número!</p>}
-                                            </div>
-                                            <div className={styles.inputBox}>
-                                                <span>Complemento :</span>
-                                                <input type="text" placeholder="Apartamento 10" />
-                                            </div>
-                                        </div>
-
-
-                                        <div className={styles.flex}>
-                                            <div className={styles.inputBox}>
-                                                <span>Bairro :</span>
-                                                <input type="text" {...register("bairro")} placeholder="Centro" />
-                                            </div>
-                                            <div className={styles.inputBox}>
-                                                <span>Cidade-UF :</span>
-                                                <input type="text" {...register("cidadeUf")} placeholder="Rio de Janeiro-RJ" />
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div className={styles.col}>
-
-                                        <h3 className={styles.title}>pagamento</h3>
-
-                                        <div className={styles.inputBox}>
-                                            <span>Cartões Aceitos :</span>
-                                            <Image className={styles.card_img} src={cardImg} alt="" />
-                                        </div>
-                                        <div className={styles.inputBox}>
-                                            <span>Nome no Cartão :</span>
-                                            <input
-                                                type="text"
-                                                placeholder="Gustavo da Silva"
-                                                value={nameCard}
-                                                onChange={event => setNameCard(event.target.value)}
-                                            />
-                                            {inputNameCardErr && <p className={styles.erro}>Por favor digite o nome impresso no cartão!</p>}
-                                        </div>
-                                        <div className={styles.inputBox}>
-                                            <span>Nº do Cartão :</span>
-                                            <input
-                                                type="number"
-                                                placeholder="1111222233334444"
-                                                value={numberCard}
-                                                onChange={event => setNumberCard(event.target.value)}
-                                            />
-                                            {inputNumberCardErr && <p className={styles.erro}>Por favor digite um cartão valido!</p>}
-                                        </div>
-                                        <div className={styles.inputBox}>
-                                            <span> Mês/Ano de Validade :</span>
-                                            <input
-                                                type="text"
-                                                placeholder="Agosto 2026"
-
-                                                value={validityCard}
-                                                onChange={handleChange}
-                                            />
-                                            {inputValidityCardErr && <p className={styles.erro}>Selecione a data de validade!</p>}
-                                        </div>
-                                        <div className={styles.inputBox}>
-                                            <span>CVV :</span>
-                                            <input
-                                                type="number"
-                                                placeholder="123"
-                                                value={cvv}
-                                                onChange={event => setCvv(event.target.value)}
-                                            />
-                                            {inputCvvErr && <p className={styles.erro}>Por favor digite um CVV valido!</p>}
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div className={styles.submit_btn} onClick={avisarCompraFinalizada}>Processar Pagamento</div>
-
-                            </form>
-
-                        </div>
-                        :
-                        <span />
-                    }
+                    <Frete />
+                    <Payment />
                 </section>
             </main>
             <Footer />
