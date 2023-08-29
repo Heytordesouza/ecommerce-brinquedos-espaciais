@@ -36,7 +36,7 @@ export default function Header() {
         <Link href='/'>
           <Image
             priority={true}
-            className={styles.logo}
+            className={styles.logoCarrinho}
             src={logo}
             alt="logo" />
         </Link>

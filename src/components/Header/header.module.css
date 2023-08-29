@@ -10,7 +10,8 @@
     font-family: 'Signika Negative', sans-serif;
 }
 
-.logo{
+.logo,
+.logoCarrinho{
     width: 20rem;
     height: auto; 
 }
@@ -53,6 +54,13 @@
         width: 55vw;
         height: auto;
         margin-right: 10%;
+    }
+
+    .container .logoCarrinho{
+        width: 56vw;
+        height: auto;
+        margin-right: 10%;
+        margin-top: 4%;
     }
 
     .container .cartQuantity{
