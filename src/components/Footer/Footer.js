@@ -19,14 +19,18 @@ export default function Footer() {
       </section>
       <section className={styles.secondColumn}>Social:</section>
       <section className={styles.thirdColumn}>
-        <a className={styles.imgSocial} href="https://github.com/Heytordesouza" target="_blank">
+        <div className={styles.containerSocial}>
           <Image className={styles.linha} src={linha} alt="linha" />
-          <Image className={styles.img} src={GitHub} alt="GitHub" />
-        </a>
-        <a className={styles.imgSocial} href="https://www.linkedin.com/in/heytor-de-souza" target="_blank">
+          <a className={styles.imgSocial} href="https://github.com/Heytordesouza" target="_blank">  
+            <Image className={styles.img} src={GitHub} alt="GitHub" />
+          </a>
+        </div>
+        <div className={styles.containerSocial}>
           <Image className={styles.linha} src={linha} alt="linha" />
-          <Image className={styles.img} src={LinKedin} alt="LinKedin" />
-        </a>
+          <a className={styles.imgSocial} href="https://www.linkedin.com/in/heytor-de-souza" target="_blank">
+            <Image className={styles.img} src={LinKedin} alt="LinKedin" />
+          </a>
+        </div>
       </section>
     </main>
   );

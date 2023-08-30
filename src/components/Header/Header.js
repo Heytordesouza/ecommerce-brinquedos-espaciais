@@ -5,7 +5,7 @@ import AppContext from "../AppContext";
 import Link from "next/link";
 import Image from "next/image";
 import styles from './header.module.css'
-import carrinhoImg from "../../../public/img/carrinho-icon.png"
+import cartImg from "../../../public/img/carrinho-icon.png"
 import logo from "../../../public/img/logo.png"
 
 export default function Header() {
@@ -23,11 +23,11 @@ export default function Header() {
       {router.asPath === '/' ?
         <>
           <Image priority={true} className={styles.logo} src={logo} alt="logo" />
-          <Link href='/carrinho' className={styles.cartQuantity}>
+          <Link href='/cart' className={styles.cartQuantity}>
             <Image
               className={styles.iconCart}
-              src={carrinhoImg}
-              alt="carrinhoImg"
+              src={cartImg}
+              alt="cartImg"
             />
             <span className={styles.cartLength}>{countCartItems}</span>
           </Link>
@@ -36,7 +36,7 @@ export default function Header() {
         <Link href='/'>
           <Image
             priority={true}
-            className={styles.logoCarrinho}
+            className={styles.logoPagCart}
             src={logo}
             alt="logo" />
         </Link>

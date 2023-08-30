@@ -7,13 +7,15 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer"
 import products from "../components/Products/products"
 import styles from '../styles/homepage.module.css'
-import carrinhoImg from "../../public/img/carrinho-icon.png"
+import cartImg from "../../public/img/carrinho-icon.png"
 
 export default function HomePage() {
 
   const context = useContext(AppContext);
+  
   const {
-    consultItem, onAdd
+    consultItem, 
+    onAdd
   } = context;
 
   const [search, setSearch] = useState("");
@@ -66,14 +68,14 @@ export default function HomePage() {
             .map((product) => {
               return (
                 <div className={styles.cards} key={product.id}>
-                  <Image className={styles.imagemproduct} priority={true} src={product.imageUrl} alt="imageproduto" />
-                  <div className={styles.nome}>{product.name}</div>
+                  <Image className={styles.imageProduct} priority={true} src={product.imageUrl} alt="imageproduto" />
+                  <div className={styles.name}>{product.name}</div>
                   <div className={styles.endCard}>
                     <div className={styles.value}>R$ {product.value.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</div>
-                    <button className={styles.button} onClick={() => onAdd(product)}>
+                    <button className={styles.buttonAdd} onClick={() => onAdd(product)}>
                       <Image
                         className={styles.iconCart}
-                        src={carrinhoImg}
+                        src={cartImg}
                         alt="" />
                     </button>
                   </div>

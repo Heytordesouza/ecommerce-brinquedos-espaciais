@@ -6,7 +6,7 @@
     align-items: flex-start;
 }
 
-.container {
+.main .firstColumn {
     min-height: 100%;
     justify-content: flex-start;
     align-items: center;
@@ -25,7 +25,7 @@
     margin-bottom: 0vh;
 }
 
-.title {
+.main .firstColumn .title {
     display: flex;
     width: 25%;
     justify-content: center;
@@ -36,14 +36,14 @@
     gap: 7%;
 }
 
-.carrinhoImg {
+.main .firstColumn .title .cartImg {
     filter: invert(100%);
     width: auto;
     height: auto;
     max-width: 20%;
 }
 
-.qtdTotal {
+.main .firstColumn .qtdTotal {
     display: flex;
     width: 40%;
     justify-content: center;
@@ -51,7 +51,7 @@
     margin-bottom: 1.5%;
 }
 
-.product {
+.main .firstColumn .product {
     border: 1px solid #000000;
     display: flex;
     justify-content: space-between;
@@ -63,21 +63,14 @@
     border-radius: 8px;
 }
 
-.imgProduto {
-    width: 12%;
-    height: 75%;
-    padding: 1%;
-    margin-left: 2%;
-}
-
-.firstLine {
+.main .firstColumn .product .firstLine {
     display: flex;
     margin-left: 2%;
     width: 40%;
     gap: 0.4vw;
 }
 
-.buttons {
+.main .firstColumn .product .firstLine .buttons {
     width: 50%;
     display: flex;
     gap: 0.8vw;
@@ -85,7 +78,7 @@
     align-items: center;
 }
 
-.buttonMenos {
+.main .firstColumn .product .firstLine .buttons .minusButton {
     width: 30%;
     height: 65%;
     font-size: 1.1vw;
@@ -94,22 +87,22 @@
     cursor: pointer;
 }
 
-.buttonMenos:hover {
+.main .firstColumn .product .firstLine .buttons .minusButton:hover {
     background-color: #FF5137;
 }
 
-.buttonMenos:active {
+.main .firstColumn .product .firstLine .buttons .minusButton:active {
     background-color: #F72000;
 }
 
-.qtd {
+.main .firstColumn .product .firstLine .buttons .qtd {
     font-weight: bold;
     font-size: 1vw;
     width: 29%;
     text-align: center;
 }
 
-.buttonMais {
+.main .firstColumn .product .firstLine .buttons .moreButton {
     width: 30%;
     height: 65%;
     font-size: 1vw;
@@ -121,15 +114,15 @@
     cursor: pointer;
 }
 
-.buttonMais:hover {
+.main .firstColumn .product .firstLine .buttons .moreButton:hover {
     background-color: #4dff4d
 }
 
-.buttonMais:active {
+.main .firstColumn .product .firstLine .buttons .moreButton:active {
     background-color: #00db00
 }
 
-.value {
+.main .firstColumn .product .firstLine .value {
     display: flex;
     flex-direction: column;
     margin-left: 3%;
@@ -138,14 +131,14 @@
     gap: 5px;
 }
 
-.valueSingle {
+.main .firstColumn .product .firstLine .value .valueSingle {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 0.7vw;
 }
 
-.valueTotal {
+.main .firstColumn .product .firstLine .value .valueTotal {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -153,7 +146,14 @@
     font-weight: bold;
 }
 
-.name {
+.main .firstColumn .product .imgProduct {
+    width: 12%;
+    height: 75%;
+    padding: 1%;
+    margin-left: 2%;
+}
+
+.main .firstColumn .product .name {
     font-size: 0.8vw;
     display: flex;
     justify-content: center;
@@ -163,7 +163,7 @@
     font-weight: bold;
 }
 
-.buttonRemove {
+.main .firstColumn .product .buttonRemove {
     height: 30%;
     width: 5%;
     justify-content: center;
@@ -175,27 +175,22 @@
     cursor: pointer;
 }
 
-.lixeira {
+.main .firstColumn .product .buttonRemove .bin {
     height: 88%;
     width: 95%;
     padding: 3px 2px 2px 2px;
     border-radius: 15%;
 }
 
-.lixeira:hover {
+.main .firstColumn .product .buttonRemove .bin:hover {
     background-color: #FF5137;
 }
 
-.lixeira:active {
+.main .firstColumn .product .buttonRemove .bin:active {
     background-color: #F72000;
 }
 
-.secondColumn{
-    display: flex;
-    flex-direction: column;
-}
-
-.buttonHome {
+.main .firstColumn .buttonHome {
     width: 96%;
     padding: 2%;
     font-size: 0.8vw;
@@ -206,96 +201,102 @@
     border-radius: 5px;
 }
 
-.buttonHome:hover {
+.main .firstColumn .buttonHome:hover {
     background-color: #d780ff;
 }
 
-.buttonHome:active {
+.main .firstColumn .buttonHome:active {
     background-color: #4b0082;
 }
 
-.linkHome {
+.main .firstColumn .buttonHome .linkHome {
     text-decoration: none;
     color: #FFFFFF;
 }
 
+.main .secondColumn{
+    display: flex;
+    flex-direction: column;
+}
+
 @media screen and (max-device-width: 1024px) and (min-device-width: 769px) {
+   
     .main {
         flex-direction: column;
         align-items: center;
     }
 
-    .container{
+    .main .firstColumn{
         width: 78%;
         margin-left: 0;
     }
 
-    .title {
+    .main .firstColumn .title {
         font-size: 3.2vw;
     }
 
-    .qtdTotal {
+    .main .firstColumn .qtdTotal {
         font-size: 2.3vw;
         width: 40%;
     }
 
-    .product {
+    .main .firstColumn .product {
         width: 95%;
         height: 12%;
     }
 
-    .imgProduto {
+    .main .firstColumn .product .firstLine {
+        width: 45%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons {
+        width: 40%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons .minusButton {
+        font-size: 2.2vw;
+        height: 85%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons .qtd {
+        font-size: 2.2vw;
+    }
+
+    .main .firstColumn .product .firstLine .buttons .moreButton {
+        font-size: 2.2vw;
+        height: 85%;
+    }
+
+    .main .firstColumn .product .firstLine .value .valueSingle {
+        font-size: 1.6vw;
+    }
+
+    .main .firstColumn .product .firstLine .value .valueTotal {
+        font-size: 2.3vw;
+    }
+
+    .main .firstColumn .product .imgProduct {
         width: 13%;
         height: 76%;
         margin-left: 0%;
     }
 
-    .firstLine {
-        width: 45%;
-    }
-
-    .buttons {
-        width: 40%;
-    }
-
-    .buttonMenos {
-        font-size: 2.2vw;
-        height: 85%;
-    }
-
-    .qtd {
-        font-size: 2.2vw;
-    }
-
-    .buttonMais {
-        font-size: 2.2vw;
-        height: 85%;
-    }
-
-    .valueSingle {
-        font-size: 1.6vw;
-    }
-
-    .valueTotal {
-        font-size: 2.3vw;
-    }
-
-    .name {
+    .main .firstColumn .product .name {
         font-size: 1.7vw;
     }
 
-    .buttonRemove {
+    .main .firstColumn .product .buttonRemove {
         height: 31%;
         width: 6%;
     }
 
-    .secondColumn{
-        align-items: center;
-        justify-content: center;
+    .main .firstColumn .buttonHome {
+        font-size: 1.8vw;
     }
 
-    .buttonHome {
-        font-size: 1.8vw;
+    .main .secondColumn{
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -305,76 +306,76 @@
         align-items: center;
     }
     
-    .container {
+    .main .firstColumn {
         width: 85%;
         margin-left: 0%;
     }
 
-    .title {
+    .main .firstColumn .title {
         font-size: 2.7vw;
     }
 
-    .qtdTotal {
+    .main .firstColumn .qtdTotal {
         font-size: 2.2vw;
     }
 
-    .product {
+    .main .firstColumn .product {
         width: 95%;
         height: 12%;
     }
 
-    .imgProduto {
+    .main .firstColumn .product .firstLine {
+        width: 45%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons {
+        width: 40%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons .minusButton {
+        font-size: 2.2vw;
+        height: 85%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons .qtd {
+        font-size: 2.2vw;
+    }
+
+    .main .firstColumn .product .firstLine .buttons .moreButton {
+        font-size: 2.2vw;
+        height: 85%;
+    }
+
+    .main .firstColumn .product .firstLine .value .valueSingle {
+        font-size: 1.6vw;
+    }
+
+    .main .firstColumn .product .firstLine .value .valueTotal {
+        font-size: 2.3vw;
+    }
+
+    .main .firstColumn .product .imgProduct {
         width: 13%;
         height: 76%;
         margin-left: 0%;
     }
 
-    .firstLine {
-        width: 45%;
-    }
-
-    .buttons {
-        width: 40%;
-    }
-
-    .buttonMenos {
-        font-size: 2.2vw;
-        height: 85%;
-    }
-
-    .qtd {
-        font-size: 2.2vw;
-    }
-
-    .buttonMais {
-        font-size: 2.2vw;
-        height: 85%;
-    }
-
-    .valueSingle {
-        font-size: 1.6vw;
-    }
-
-    .valueTotal {
-        font-size: 2.3vw;
-    }
-
-    .name {
+    .main .firstColumn .product .name {
         font-size: 1.7vw;
     }
 
-    .buttonRemove {
+    .main .firstColumn .product .buttonRemove {
         height: 31%;
         width: 6%;
     }
 
-    .secondColumn{
-        align-items: center;
-        justify-content: center;
+    .main .firstColumn .buttonHome {
+        font-size: 2vw;
     }
 
-    .buttonHome {
-        font-size: 2vw;
+    .main .secondColumn{
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -384,89 +385,89 @@
         align-items: center;
     }
     
-    .container {
+    .main .firstColumn {
         width: 95%;
         margin-left: 2.6%;
     }
 
-    .title {
+    .main .firstColumn .title {
         width: 35%;
         font-size: 4vw;
     }
 
-    .qtdTotal {
+    .main .firstColumn .qtdTotal {
         width: 38%;
         font-size: 3vw;
     }
 
-    .product {
+    .main .firstColumn .product {
         width: 100%;
     }
 
-    .imgProduto {
+    .main .firstColumn .product .firstLine {
+        width: 50%;
+        margin-left: 0.5%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons {
+        width: 82%;
+        margin-left: 3%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons .minusButton {
+        font-size: 5vw;
+        height: 90%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons .qtd {
+        font-size: 3vw;
+        width: 40%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons .moreButton {
+        font-size: 5vw;
+        height: 90%;
+    }
+
+    .main .firstColumn .product .firstLine .value {
+        width: 95%;
+    }
+
+    .main .firstColumn .product .firstLine .value .valueSingle {
+        font-size: 2.5vw;
+    }
+
+    .main .firstColumn .product .firstLine .value .valueTotal {
+        font-size: 3.7vw;
+    }
+
+    .main .firstColumn .product .imgProduct {
         width: 15%;
         height: 79%;
         margin-left: 0%;
     }
 
-    .firstLine {
-        width: 50%;
-        margin-left: 0.5%;
-    }
-
-    .buttons {
-        width: 82%;
-        margin-left: 3%;
-    }
-
-    .buttonMenos {
-        font-size: 5vw;
-        height: 90%;
-    }
-
-    .qtd {
-        font-size: 3vw;
-        width: 40%;
-    }
-
-    .buttonMais {
-        font-size: 5vw;
-        height: 90%;
-    }
-
-    .value {
-        width: 95%;
-    }
-
-    .valueSingle {
-        font-size: 2.5vw;
-    }
-
-    .valueTotal {
-        font-size: 3.7vw;
-    }
-
-    .name {
+    .main .firstColumn .product .name {
         font-size: 2.5vw;
         width: 19vw;
     }
 
-    .buttonRemove {
+    .main .firstColumn .product .buttonRemove {
         height: 32%;
         width: 7%;
         margin-right: 2%;
         padding-left: 0px;
     }
 
-    .secondColumn{
-        align-items: center;
-        justify-content: center;
-    }
-
-    .buttonHome {
+    .main .firstColumn .buttonHome {
         width: 100%;
         padding: 4%;
         font-size: 3.7vw;
         border-radius: 12px;
+    }
+
+    .main .secondColumn{
+        align-items: center;
+        justify-content: center;
     }
 }

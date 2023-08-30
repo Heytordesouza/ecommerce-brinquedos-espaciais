@@ -5,9 +5,9 @@ import api from "../../services/api";
 import AppContext from '../AppContext'
 import excluir from "../../../public/img/excluir.png"
 import lupa from "../../../public/img/lupa.png"
-import styles from './frete.module.css'
+import styles from './freight.module.css'
 
-export default function Frete() {
+export default function Freight() {
     const context = useContext(AppContext)
 
     const {
@@ -63,7 +63,7 @@ export default function Frete() {
     } 
 
     return (
-        <div className={styles.lineEnd}>
+        <main className={styles.container}>
             {seachCep ?
                 //True - Estado onde renderiza o input para digitar o cep
                 <>
@@ -112,6 +112,6 @@ export default function Frete() {
                     </div>
                 </>
             }
-        </div>
+        </main>
     )
 }
