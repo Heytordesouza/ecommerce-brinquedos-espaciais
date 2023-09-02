@@ -13,7 +13,7 @@
     flex-direction: column;
     justify-content: center;
     background-color: #FFFFFF;
-    width: 60%;
+    width: 70%;
     height: 12vh;
     border-radius: 8px;
     align-items: center;
@@ -33,7 +33,7 @@
 }
 
 .container .cep .freightValue {
-    width: 90%;
+    width: 95%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -42,15 +42,21 @@
     justify-content: center; 
 }
 
+.container .cep .freightValue span {
+    font-size: 1vw;
+    text-align: center;
+    width: 30%;
+}
+
 .container .cep .freightValue .input {
     display: flex;
-    font-size: 0.8vw;
+    font-size: 1vw;
     width: 90%;
     border-radius: 7px;
     text-align: center;
     padding-left: 12%;
     height: 1.5vw;
-    margin-left: 5%;
+    margin-left: 1%;
 }
 
 .container .cep .freightValue .buttonCep {
@@ -58,7 +64,8 @@
     border-radius: 20%;
     height: 1.8vw;
     cursor: pointer;
-    margin-left: 8%;
+    margin-left: 5%;
+    margin-bottom: 0.5%;
 }
 
 .container .cep .freightValue .buttonCep:hover {
@@ -71,7 +78,7 @@
 }
 
 .container .cep .freightValue .buttonCep .lupa {
-    height: 1.8vw;
+    height: 1.7vw;
     width: 100%;
 }
 
@@ -179,24 +186,30 @@
     
     .container .cep .freightValue{
         font-size: 2vw;
-        margin-right: 0;
+    }
+
+    .container .cep .freightValue span {
+        font-size: 2vw;
+        text-align: center;
+        width: 25%;
     }
 
     .container .cep .freightValue .input {
         width: 96%;
-        height: 3.5vw;
-        font-size: 1.8vw;
-        margin-left: 1.1vw;
+        height: 4vw;
+        font-size: 2vw;
+        padding-right: 10%;
+        margin-left: 0;
     }
 
     .container .cep .freightValue .buttonCep {
         height: 3.9vw;
-        margin-left: 8%;
+        margin-left: 10%;
         margin-top: 0.2vh;
     }
 
     .container .cep .freightValue .buttonCep .lupa {
-        height: 3.9vw;
+        height: 4vw;
     }
 
     .container .finalValue{
@@ -263,21 +276,29 @@
         margin-right: 0;
     }
 
+    .container .cep .freightValue span {
+        font-size: 2vw;
+        text-align: center;
+        width: 25%;
+    }
+
     .container .cep .freightValue .input {
         width: 96%;
-        height: 4.1vw;
-        font-size: 2.2vw;
+        height: 4.3vw;
         padding-top: 1%;
+        font-size: 2vw;
+        padding-right: 10%;
+        margin-left: 1%;
     }
 
     .container .cep .freightValue .buttonCep {
-        height: 4.4vw;
-        margin-left: 11%;
+        height: 4.8vw;
+        margin-left: 12%;
         margin-top: 0vh;
     }
 
     .container .cep .freightValue .buttonCep .lupa {
-        height: 4.4vw;
+        height: 4.8vw;
     }
 
     .container .finalValue{
@@ -349,6 +370,12 @@
         margin-right: 0;
     }
 
+    .container .cep .freightValue span {
+        font-size: 3vw;
+        text-align: center;
+        width: 25%;
+    }
+
     .container .cep .freightValue .input {
         width: 98%;
         height: 7vw;
@@ -358,7 +385,7 @@
 
     .container .cep .freightValue .buttonCep {
         height: 8vw;
-        margin-left: 4vw;
+        margin-left: 4.5vw;
         margin-top: 0;
     }
 

@@ -73,7 +73,8 @@ export default function Freight() {
                             <span className={styles.total}>Total:
                                 <span className={styles.totalValue}> R$ {totalPrice.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</span>
                             </span>
-                            <div className={styles.freightValue}>Valor do frete:
+                            <div className={styles.freightValue}>
+                                <span>Valor do frete:</span>
                                 <label>
                                     <input className={styles.input}
                                         type="number"

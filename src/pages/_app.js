@@ -4,8 +4,13 @@ import { useForm } from 'react-hook-form'
 import { ToastContainer } from 'react-toastify';
 import { toast } from 'react-toastify'
 import '../styles/global.css'
-
 import 'react-toastify/dist/ReactToastify.css';
+import { Chakra_Petch } from 'next/font/google'
+
+const chakraPetch = Chakra_Petch({
+    weight: ['300', '500', '700'],
+    subsets: ['latin'],
+})
 
 export default function App({ Component, pageProps }) {
 
@@ -50,7 +55,7 @@ export default function App({ Component, pageProps }) {
   }, 0);
 
   return (
-    <>
+    <main className={chakraPetch.className}>
       <ToastContainer />
       <AppContext.Provider
         value={{
@@ -69,6 +74,6 @@ export default function App({ Component, pageProps }) {
         }}>
         <Component {...pageProps} />
       </AppContext.Provider>
-    </>
+    </main>
   )
 }

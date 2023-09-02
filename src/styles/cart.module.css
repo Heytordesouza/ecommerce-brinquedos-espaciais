@@ -21,7 +21,6 @@
     color: #FFFFFF;
     background: #15183799;
     border-radius: 30px;
-    font-family: 'Signika Negative', sans-serif;
     margin-bottom: 0vh;
 }
 
@@ -143,7 +142,7 @@
     align-items: center;
     justify-content: center;
     font-size: 1vw;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .main .firstColumn .product .imgProduct {
@@ -154,13 +153,13 @@
 }
 
 .main .firstColumn .product .name {
-    font-size: 0.8vw;
+    font-size: 0.9vw;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 15vw;
-    font-weight: bold;
+    width: 14vw;
+    font-weight: 500;
 }
 
 .main .firstColumn .product .buttonRemove {
@@ -193,7 +192,7 @@
 .main .firstColumn .buttonHome {
     width: 96%;
     padding: 2%;
-    font-size: 0.8vw;
+    font-size: 0.9vw;
     text-align: center;
     background-color: #a407ff;
     color: #fff;

@@ -81,7 +81,7 @@
     border-radius: 15%;
 }
 
-@media screen and (max-device-width: 768px) and (min-device-width: 461px) {
+@media screen and (max-device-width: 768px) and (min-device-width: 551px) {
     
     .container .firstColumn .logo{
         width: 22vw;
@@ -109,7 +109,7 @@
     }
 }
 
-@media screen and (max-device-width: 460px){
+@media screen and (max-device-width: 550px){
     
     .container .firstColumn .logo {
         width: 45vw;

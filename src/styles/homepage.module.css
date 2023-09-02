@@ -23,7 +23,7 @@
     display: flex;
     flex-direction: column;
     width: 13.5rem;
-    height: 17.5rem;
+    height: 18rem;
     background: #FFFFFF;
     border-radius: 15px;
     color: #000000;
@@ -44,16 +44,15 @@
 }
 
 .main .section .cards .name {
-    font-family: 'Signika Negative', sans-serif;
-    font-weight: bold;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
-    width: 90%;
+    width: 87%;
     justify-content: space-between;
     margin-top: 0.65rem;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 500;
     height: 8rem;
 }
 
@@ -68,14 +67,12 @@
 }
 
 .main .section .cards .endCard .value {
-    font-family: 'Signika Negative', sans-serif;
     font-weight: bold;
     font-size: 1.1rem;
     margin-left: 15px;
 }
 
 .main .section .cards .endCard .buttonAdd {
-    font-family: 'Signika Negative', sans-serif;
     width: 2.5rem;
     height: 2.3rem;
     border-radius: 5px;

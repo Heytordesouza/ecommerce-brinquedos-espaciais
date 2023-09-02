@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { toast } from 'react-toastify'
 import Image from "next/image";
 import { validEmail, validNumberHome, validNumberCard, validCvv } from "../../utils/regex";
@@ -8,6 +9,7 @@ import cardImg from "../../../public/img/card_img.png"
 
 export default function Payment() {
     const context = useContext(AppContext)
+    const router = useRouter()
 
     const {
         setCartItems,
@@ -73,7 +75,7 @@ export default function Payment() {
         setValidityCard(formattedValue);
     };
 
-    function avisarCompraFinalizada() {
+    function checkout() {
 
         if (seachCep) {
             toast.warn('Adicione o CEP!', {
@@ -139,6 +141,7 @@ export default function Payment() {
                 theme: 'colored',
             });
             setSeachCep(true)
+            router.push('/')
         }
     }
 
@@ -251,7 +254,7 @@ export default function Payment() {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.submit_btn} onClick={avisarCompraFinalizada}>Processar Pagamento</div>
+                    <div className={styles.submit_btn} onClick={checkout}>Processar Pagamento</div>
                 </form>
                 :
                 <span />
