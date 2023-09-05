@@ -3,7 +3,7 @@ export const validEmail = new RegExp(
 );
 
 export const validNumberHome = new RegExp(
-    /^\d{1}$/
+    /^\d+/
 );
 
 export const validNumberCard = new RegExp(
@@ -11,5 +11,5 @@ export const validNumberCard = new RegExp(
 );
 
 export const validCvv = new RegExp(
-    /^\d{3}$/
+    /^\d{3,4}$/
 );
