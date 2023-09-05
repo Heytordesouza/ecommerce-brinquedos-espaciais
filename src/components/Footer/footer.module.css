@@ -1,4 +1,4 @@
-.container{
+.main{
     position: relative;
     bottom: 0;
     display: flex;
@@ -12,7 +12,7 @@
     font-family: 'Signika Negative', sans-serif;
 }
 
-.firstColumn{
+.main .firstColumn{
     width: 100vw;
     align-items: center;
     justify-content: center;
@@ -20,34 +20,34 @@
     gap: 1vh;
 }
 
-.logo{
+.main .firstColumn .logo{
     width: 15vw;
     height: max-content;
 }
 
-.name{
+.main .firstColumn .name{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.created{
+.main .firstColumn .name .created{
     font-size: 0.7vw;
 }
 
-.createdName{
+.main .firstColumn .name .createdName{
     font-size: 1vw;
     font-weight: bold;
 }
 
-.secondColumn{
+.main .secondColumn{
     display: flex;
     width: 5%;
     font-size: 1vw;
 }
 
-.thirdColumn{
+.main .thirdColumn{
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -56,71 +56,84 @@
     gap: 1.5vh; 
 }
 
-.imgSocial{
+.main .thirdColumn .containerSocial {
     display: flex;
-    width: 8%;
+    flex-direction: row;
+    width: 50%;
+}
+
+.main .thirdColumn .containerSocial .linha{
+    width: 25%;
+    height: 20%;
+}
+
+.main .thirdColumn .containerSocial .imgSocial{
+    display: flex;
+    width: 18%;
     height: 8%;
     gap: 20%;
+    margin-top: 2.5%; 
 }
 
-.img{
+.main .thirdColumn .containerSocial  .imgSocial .img{
     width: 100%;
     height: 100%;
-    border-radius: 15%;  
+    border-radius: 15%;
 }
 
-.linha{
-    width: 100%;
-    height: 100%;
-}
-
-@media screen and (max-device-width: 768px) and (min-device-width: 461px) {
+@media screen and (max-device-width: 768px) and (min-device-width: 551px) {
     
-    .firstColumn .logo{
+    .main .firstColumn .logo{
         width: 22vw;
     }
 
-    .name .created{
+    .main .firstColumn .name .created{
         font-size: 1vw;
     }
 
-    .name .createdName{
+    .main .firstColumn .name .createdName{
         font-size: 1.3vw;
     }
 
-    .secondColumn{
+    .main .secondColumn{
         font-size: 1.3vw;
     }
 
-    .imgSocial{
-        width: 12%;
-        height: 12%;
+    .main .thirdColumn .containerSocial .linha{
+        width: 35%;
+    }
+
+    .main .thirdColumn .containerSocial .imgSocial{
+        width: 26%;
+        margin-top: 3%;
     }
 }
 
-@media screen and (max-device-width: 460px){
+@media screen and (max-device-width: 550px){
     
-    .firstColumn .logo {
+    .main .firstColumn .logo {
         width: 45vw;
         height: max-content;
     }
-    
 
-    .name .created{
+    .main .firstColumn .name .created{
         font-size: 2vw;
     }
 
-    .name .createdName{
+    .main .firstColumn .name .createdName{
         font-size: 2.5vw;
     }
 
-    .secondColumn{
+    .main .secondColumn{
         font-size: 2.3vw;
     }
 
-    .imgSocial{
-        width: 22%;
-        height: 22%;
+    .main .thirdColumn .containerSocial .linha{
+        width: 55%;
+    }
+
+    .main .thirdColumn .containerSocial .imgSocial{
+        width: 52%;
     }
 }
 

@@ -1,47 +1,79 @@
 import AppContext from '../components/AppContext';
 import { useState } from 'react';
+import { useForm } from 'react-hook-form'
 import { ToastContainer } from 'react-toastify';
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 import '../styles/global.css'
-
 import 'react-toastify/dist/ReactToastify.css';
+import { Chakra_Petch } from 'next/font/google'
+
+const chakraPetch = Chakra_Petch({
+    weight: ['300', '500', '700'],
+    subsets: ['latin'],
+})
 
 export default function App({ Component, pageProps }) {
 
   const [cartItems, setCartItems] = useState([]);
+  const [seachCep, setSeachCep] = useState(true)
+  const { register, handleSubmit, setValue } = useForm();
 
   const onAdd = (product) => {
-    const novoCarrinho = [...cartItems]
+    const newCart = [...cartItems]
 
-    const produtoNovo = novoCarrinho.find((novoItem) => novoItem.id === product.id)
-    if (!produtoNovo) {
-      const novoProduto = { ...product, qtd: 1 }
-      novoCarrinho.push(novoProduto)
+    const newProduct = newCart.find((newItem) => newItem.id === product.id)
+    if (!newProduct) {
+      const productNew = { ...product, qtd: 1 }
+      newCart.push(productNew)
     } else {
-      produtoNovo.qtd++
+      newProduct.qtd++
     }
-    const virarString = JSON.stringify(novoCarrinho)
-    localStorage.setItem("local", virarString)
-    setCartItems(novoCarrinho)
+    const turnString = JSON.stringify(newCart)
+    localStorage.setItem("local", turnString)
+    setCartItems(newCart)
     toast.success('Produto adicionado ao carrinho', {
       autoClose: 1500,
     });
   }
 
-  const consultarItem = () => {
+  const consultItem = () => {
     if (localStorage.getItem("local")) {
-      const armazenarItem = localStorage.getItem("local")
-      const pegarString = JSON.parse(armazenarItem);
-      setCartItems(pegarString)
+      const storeItem = localStorage.getItem("local")
+      const getString = JSON.parse(storeItem);
+      setCartItems(getString)
     }
   }
 
+  const itemsPrice = cartItems.reduce((a, c) => {
+    return a + c.qtd * c.value
+  }, 0);
+
+  const totalPrice = itemsPrice;
+
+  const countCartItems = cartItems.reduce((a, c) => {
+    return a + c.qtd
+  }, 0);
+
   return (
-    <>
+    <main className={chakraPetch.className}>
       <ToastContainer />
-      <AppContext.Provider value={{ cartItems, setCartItems, onAdd, consultarItem }}>
+      <AppContext.Provider
+        value={{
+          cartItems,
+          setCartItems,
+          seachCep,
+          setSeachCep,
+          register,
+          handleSubmit,
+          setValue,
+          onAdd,
+          itemsPrice,
+          totalPrice,
+          countCartItems,
+          consultItem
+        }}>
         <Component {...pageProps} />
       </AppContext.Provider>
-    </>
+    </main>
   )
 }

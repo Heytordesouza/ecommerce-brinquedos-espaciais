@@ -10,26 +10,26 @@
     font-family: 'Signika Negative', sans-serif;
 }
 
-.logo,
-.logoCarrinho{
+.container .logo,
+.container .logoPagCart{
     width: 20rem;
     height: auto; 
 }
 
-.iconCart {
-    filter: invert(100%);
-    width: auto;
-    height: auto;
-}
-
-.cartQuantity {
+.container .cartQuantity {
     display: flex;
     position: absolute;
     top: 4vh;
     right: 3vw; 
 }
 
-.cartLength {
+.container .cartQuantity .iconCart {
+    filter: invert(100%);
+    width: auto;
+    height: auto;
+}
+
+.container .cartQuantity .cartLength {
     font-size: 1rem;
     background-color: #8606fe;
     color: #FFFFFF;
@@ -56,27 +56,27 @@
         margin-right: 10%;
     }
 
-    .container .logoCarrinho{
-        width: 56vw;
-        height: auto;
-        margin-right: 10%;
-        margin-top: 4%;
-    }
-
     .container .cartQuantity{
         top: 3vh;
         right: 3.8vw; 
     }
 
-    .container .iconCart {
+    .container .cartQuantity .iconCart {
         width: 7vw;
         height: auto;
     }
 
-    .container .cartLength {
+    .container .cartQuantity .cartLength {
         font-size: 3vw;
         width: 4vw;
         height: 4vw;
         margin-right: 5%;
+    }
+
+    .container .logoPagCart{
+        width: 56vw;
+        height: auto;
+        margin-right: 10%;
+        margin-top: 4%;
     }
 }

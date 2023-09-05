@@ -1,0 +1,472 @@
+.main {
+    display: flex;
+    min-height: 78vh;
+    flex-direction: row;
+    margin-bottom: 2vh;
+    align-items: flex-start;
+}
+
+.main .firstColumn {
+    min-height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 2%;
+    margin-left: 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    padding: 10px;
+    width: 40%;
+    margin-right: 10px;
+    color: #FFFFFF;
+    background: #15183799;
+    border-radius: 30px;
+    margin-bottom: 0vh;
+}
+
+.main .firstColumn .title {
+    display: flex;
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7vw;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    gap: 7%;
+}
+
+.main .firstColumn .title .cartImg {
+    filter: invert(100%);
+    width: auto;
+    height: auto;
+    max-width: 20%;
+}
+
+.main .firstColumn .qtdTotal {
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    font-size: 0.9vw;
+    margin-bottom: 1.5%;
+}
+
+.main .firstColumn .product {
+    border: 1px solid #000000;
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    height: 15%;
+    background: #FFFFFF;
+    color: #000000;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.main .firstColumn .product .firstLine {
+    display: flex;
+    margin-left: 2%;
+    width: 40%;
+    gap: 0.4vw;
+}
+
+.main .firstColumn .product .firstLine .buttons {
+    width: 50%;
+    display: flex;
+    gap: 0.8vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .firstColumn .product .firstLine .buttons .minusButton {
+    width: 30%;
+    height: 65%;
+    font-size: 1.1vw;
+    border-radius: 20%;
+    border: none;
+    cursor: pointer;
+}
+
+.main .firstColumn .product .firstLine .buttons .minusButton:hover {
+    background-color: #FF5137;
+}
+
+.main .firstColumn .product .firstLine .buttons .minusButton:active {
+    background-color: #F72000;
+}
+
+.main .firstColumn .product .firstLine .buttons .qtd {
+    font-weight: bold;
+    font-size: 1vw;
+    width: 29%;
+    text-align: center;
+}
+
+.main .firstColumn .product .firstLine .buttons .moreButton {
+    width: 30%;
+    height: 65%;
+    font-size: 1vw;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    border: none;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+.main .firstColumn .product .firstLine .buttons .moreButton:hover {
+    background-color: #4dff4d
+}
+
+.main .firstColumn .product .firstLine .buttons .moreButton:active {
+    background-color: #00db00
+}
+
+.main .firstColumn .product .firstLine .value {
+    display: flex;
+    flex-direction: column;
+    margin-left: 3%;
+    height: 50%;
+    width: 55%;
+    gap: 5px;
+}
+
+.main .firstColumn .product .firstLine .value .valueSingle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7vw;
+}
+
+.main .firstColumn .product .firstLine .value .valueTotal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1vw;
+    font-weight: 700;
+}
+
+.main .firstColumn .product .imgProduct {
+    width: 12%;
+    height: 75%;
+    padding: 1%;
+    margin-left: 2%;
+}
+
+.main .firstColumn .product .name {
+    font-size: 0.9vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 14vw;
+    font-weight: 500;
+}
+
+.main .firstColumn .product .buttonRemove {
+    height: 30%;
+    width: 5%;
+    justify-content: center;
+    margin-right: 2%;
+    border-radius: 15%;
+    padding-left: 2px;
+    border: none;
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.main .firstColumn .product .buttonRemove .bin {
+    height: 88%;
+    width: 95%;
+    padding: 2px 2px 2px 2px;
+    border-radius: 15%;
+}
+
+.main .firstColumn .product .buttonRemove .bin:hover {
+    background-color: #FF5137;
+}
+
+.main .firstColumn .product .buttonRemove .bin:active {
+    background-color: #F72000;
+}
+
+.main .firstColumn .buttonHome {
+    width: 96%;
+    padding: 2%;
+    font-size: 0.9vw;
+    text-align: center;
+    background-color: #a407ff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.main .firstColumn .buttonHome:hover {
+    background-color: #d780ff;
+}
+
+.main .firstColumn .buttonHome:active {
+    background-color: #4b0082;
+}
+
+.main .firstColumn .buttonHome .linkHome {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.main .secondColumn{
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-device-width: 1024px) and (min-device-width: 769px) {
+   
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main .firstColumn{
+        width: 78%;
+        margin-left: 0;
+    }
+
+    .main .firstColumn .title {
+        font-size: 3.2vw;
+    }
+
+    .main .firstColumn .qtdTotal {
+        font-size: 2.3vw;
+        width: 40%;
+    }
+
+    .main .firstColumn .product {
+        width: 95%;
+        height: 12%;
+    }
+
+    .main .firstColumn .product .firstLine {
+        width: 45%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons {
+        width: 40%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons .minusButton {
+        font-size: 2.2vw;
+        height: 85%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons .qtd {
+        font-size: 2.2vw;
+    }
+
+    .main .firstColumn .product .firstLine .buttons .moreButton {
+        font-size: 2.2vw;
+        height: 85%;
+    }
+
+    .main .firstColumn .product .firstLine .value .valueSingle {
+        font-size: 1.6vw;
+    }
+
+    .main .firstColumn .product .firstLine .value .valueTotal {
+        font-size: 2.3vw;
+    }
+
+    .main .firstColumn .product .imgProduct {
+        width: 13%;
+        height: 76%;
+        margin-left: 0%;
+    }
+
+    .main .firstColumn .product .name {
+        font-size: 1.7vw;
+    }
+
+    .main .firstColumn .product .buttonRemove {
+        height: 31%;
+        width: 6%;
+    }
+
+    .main .firstColumn .buttonHome {
+        font-size: 1.8vw;
+    }
+
+    .main .secondColumn{
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-device-width: 768px) and (min-device-width: 551px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .main .firstColumn {
+        width: 85%;
+        margin-left: 0%;
+    }
+
+    .main .firstColumn .title {
+        font-size: 2.7vw;
+    }
+
+    .main .firstColumn .qtdTotal {
+        font-size: 2.2vw;
+    }
+
+    .main .firstColumn .product {
+        width: 95%;
+        height: 12%;
+    }
+
+    .main .firstColumn .product .firstLine {
+        width: 45%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons {
+        width: 40%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons .minusButton {
+        font-size: 2.2vw;
+        height: 85%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons .qtd {
+        font-size: 2.2vw;
+    }
+
+    .main .firstColumn .product .firstLine .buttons .moreButton {
+        font-size: 2.2vw;
+        height: 85%;
+    }
+
+    .main .firstColumn .product .firstLine .value .valueSingle {
+        font-size: 1.6vw;
+    }
+
+    .main .firstColumn .product .firstLine .value .valueTotal {
+        font-size: 2.3vw;
+    }
+
+    .main .firstColumn .product .imgProduct {
+        width: 13%;
+        height: 76%;
+        margin-left: 0%;
+    }
+
+    .main .firstColumn .product .name {
+        font-size: 1.7vw;
+    }
+
+    .main .firstColumn .product .buttonRemove {
+        height: 31%;
+        width: 6%;
+    }
+
+    .main .firstColumn .buttonHome {
+        font-size: 2vw;
+    }
+
+    .main .secondColumn{
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-device-width: 550px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .main .firstColumn {
+        width: 95%;
+        margin-left: 2.6%;
+    }
+
+    .main .firstColumn .title {
+        width: 35%;
+        font-size: 4vw;
+    }
+
+    .main .firstColumn .qtdTotal {
+        width: 38%;
+        font-size: 3vw;
+    }
+
+    .main .firstColumn .product {
+        width: 100%;
+    }
+
+    .main .firstColumn .product .firstLine {
+        width: 50%;
+        margin-left: 0.5%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons {
+        width: 82%;
+        margin-left: 3%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons .minusButton {
+        font-size: 5vw;
+        height: 90%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons .qtd {
+        font-size: 3vw;
+        width: 40%;
+    }
+
+    .main .firstColumn .product .firstLine .buttons .moreButton {
+        font-size: 5vw;
+        height: 90%;
+    }
+
+    .main .firstColumn .product .firstLine .value {
+        width: 95%;
+    }
+
+    .main .firstColumn .product .firstLine .value .valueSingle {
+        font-size: 2.5vw;
+    }
+
+    .main .firstColumn .product .firstLine .value .valueTotal {
+        font-size: 3.7vw;
+    }
+
+    .main .firstColumn .product .imgProduct {
+        width: 15%;
+        height: 79%;
+        margin-left: 0%;
+    }
+
+    .main .firstColumn .product .name {
+        font-size: 2.5vw;
+        width: 19vw;
+    }
+
+    .main .firstColumn .product .buttonRemove {
+        height: 32%;
+        width: 7%;
+        margin-right: 2%;
+        padding-left: 0px;
+    }
+
+    .main .firstColumn .buttonHome {
+        width: 100%;
+        padding: 4%;
+        font-size: 3.7vw;
+        border-radius: 12px;
+    }
+
+    .main .secondColumn{
+        align-items: center;
+        justify-content: center;
+    }
+}

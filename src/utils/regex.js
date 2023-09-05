@@ -3,11 +3,11 @@ export const validEmail = new RegExp(
 );
 
 export const validNumberHome = new RegExp(
-    /^\d{2}$/
+    /^\d{1}$/
 );
 
 export const validNumberCard = new RegExp(
-    /^\d{16}$/
+    /^\d{4}( \d{4}){3}$/
 );
 
 export const validCvv = new RegExp(
