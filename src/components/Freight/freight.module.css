@@ -151,7 +151,8 @@
 }
 
 .container .finalValue .total {
-    width: 50%;
+    width: 80%;
+    font-size: 1.3vw;
     font-weight: bold;
     justify-content: center; 
     margin: 1% 0 3% 0;
