@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Head>
         <title>Brinquedos Espaciais</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.ico" />
       </Head>
       <HomePage />
     </>

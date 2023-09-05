@@ -9,7 +9,7 @@ import linha from "../../../public/img/linha.png"
 export default function Footer() {
 
   return (
-    <main className={styles.container}>
+    <main className={styles.main}>
       <section className={styles.firstColumn}>
         <Image priority={true} className={styles.logo} src={logo} alt="logo" />
         <span className={styles.name}>

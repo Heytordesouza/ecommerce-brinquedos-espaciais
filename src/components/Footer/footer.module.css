@@ -1,4 +1,4 @@
-.container{
+.main{
     position: relative;
     bottom: 0;
     display: flex;
@@ -12,7 +12,7 @@
     font-family: 'Signika Negative', sans-serif;
 }
 
-.container .firstColumn{
+.main .firstColumn{
     width: 100vw;
     align-items: center;
     justify-content: center;
@@ -20,34 +20,34 @@
     gap: 1vh;
 }
 
-.container .firstColumn .logo{
+.main .firstColumn .logo{
     width: 15vw;
     height: max-content;
 }
 
-.container .firstColumn .name{
+.main .firstColumn .name{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.container .firstColumn .name .created{
+.main .firstColumn .name .created{
     font-size: 0.7vw;
 }
 
-.container .firstColumn .name .createdName{
+.main .firstColumn .name .createdName{
     font-size: 1vw;
     font-weight: bold;
 }
 
-.container .secondColumn{
+.main .secondColumn{
     display: flex;
     width: 5%;
     font-size: 1vw;
 }
 
-.container .thirdColumn{
+.main .thirdColumn{
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -56,18 +56,18 @@
     gap: 1.5vh; 
 }
 
-.container .thirdColumn .containerSocial {
+.main .thirdColumn .containerSocial {
     display: flex;
     flex-direction: row;
     width: 50%;
 }
 
-.container .thirdColumn .containerSocial .linha{
+.main .thirdColumn .containerSocial .linha{
     width: 25%;
     height: 20%;
 }
 
-.container .thirdColumn .containerSocial .imgSocial{
+.main .thirdColumn .containerSocial .imgSocial{
     display: flex;
     width: 18%;
     height: 8%;
@@ -75,7 +75,7 @@
     margin-top: 2.5%; 
 }
 
-.container .thirdColumn .containerSocial  .imgSocial .img{
+.main .thirdColumn .containerSocial  .imgSocial .img{
     width: 100%;
     height: 100%;
     border-radius: 15%;
@@ -83,27 +83,27 @@
 
 @media screen and (max-device-width: 768px) and (min-device-width: 551px) {
     
-    .container .firstColumn .logo{
+    .main .firstColumn .logo{
         width: 22vw;
     }
 
-    .container .firstColumn .name .created{
+    .main .firstColumn .name .created{
         font-size: 1vw;
     }
 
-    .container .firstColumn .name .createdName{
+    .main .firstColumn .name .createdName{
         font-size: 1.3vw;
     }
 
-    .container .secondColumn{
+    .main .secondColumn{
         font-size: 1.3vw;
     }
 
-    .container .thirdColumn .containerSocial .linha{
+    .main .thirdColumn .containerSocial .linha{
         width: 35%;
     }
 
-    .container .thirdColumn .containerSocial .imgSocial{
+    .main .thirdColumn .containerSocial .imgSocial{
         width: 26%;
         margin-top: 3%;
     }
@@ -111,28 +111,28 @@
 
 @media screen and (max-device-width: 550px){
     
-    .container .firstColumn .logo {
+    .main .firstColumn .logo {
         width: 45vw;
         height: max-content;
     }
 
-    .container .firstColumn .name .created{
+    .main .firstColumn .name .created{
         font-size: 2vw;
     }
 
-    .container .firstColumn .name .createdName{
+    .main .firstColumn .name .createdName{
         font-size: 2.5vw;
     }
 
-    .container .secondColumn{
+    .main .secondColumn{
         font-size: 2.3vw;
     }
 
-    .container .thirdColumn .containerSocial .linha{
+    .main .thirdColumn .containerSocial .linha{
         width: 55%;
     }
 
-    .container .thirdColumn .containerSocial .imgSocial{
+    .main .thirdColumn .containerSocial .imgSocial{
         width: 52%;
     }
 }

@@ -8,6 +8,7 @@ import lupa from "../../../public/img/lupa.png"
 import styles from './freight.module.css'
 
 export default function Freight() {
+    
     const context = useContext(AppContext)
 
     const {

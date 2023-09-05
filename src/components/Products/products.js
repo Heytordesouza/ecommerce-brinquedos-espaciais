@@ -13,6 +13,11 @@ import imgId12 from "../../../public/img/id12.png"
 import imgId13 from "../../../public/img/id13.png"
 import imgId14 from "../../../public/img/id14.png"
 import imgId15 from "../../../public/img/id15.png"
+import imgId16 from "../../../public/img/id16.png"
+import imgId17 from "../../../public/img/id17.png"
+import imgId18 from "../../../public/img/id18.png"
+import imgId19 from "../../../public/img/id19.png"
+import imgId20 from "../../../public/img/id20.png"
 
 const Products = [
   {
@@ -104,6 +109,36 @@ const Products = [
     name: "Foguete Espacial De Astronauta Com Luz e Som",
     value: 299.99,
     imageUrl: imgId15,
+  },
+  {
+    id: 16,
+    name: "Foguete de Pelúcia Decoração Espacial",
+    value: 59.99,
+    imageUrl: imgId16,
+  },
+  {
+    id: 17,
+    name: "Projetor de luz rotativo de 360° de astronauta",
+    value: 99.99,
+    imageUrl: imgId17,
+  },
+  {
+    id: 18,
+    name: "Robô Espacial com Iluminação e Música 360°",
+    value: 89.99,
+    imageUrl: imgId18,
+  },
+  {
+    id: 19,
+    name: "Astronauta Articulável Com Veículo",
+    value: 39.99,
+    imageUrl: imgId19,
+  },
+  {
+    id: 20,
+    name: "Kit Modelo de Sistema Solar Kids",
+    value: 399.99,
+    imageUrl: imgId20,
   }
 ]
 

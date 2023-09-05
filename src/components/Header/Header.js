@@ -9,6 +9,7 @@ import cartImg from "../../../public/img/carrinho-icon.png"
 import logo from "../../../public/img/logo.png"
 
 export default function Header() {
+
   const context = useContext(AppContext)
   const router = useRouter()
 
@@ -20,7 +21,7 @@ export default function Header() {
 
   return (
     <main className={styles.container}>
-      {router.asPath === '/' ?
+      {router.asPath === '/' ? // Página na Homepage, renderiza a logo principal e o botão para a página carrinho.
         <>
           <Image priority={true} className={styles.logo} src={logo} alt="logo" />
           <Link href='/cart' className={styles.cartQuantity}>
@@ -32,7 +33,7 @@ export default function Header() {
             <span className={styles.cartLength}>{countCartItems}</span>
           </Link>
         </>
-        :
+        : // Página no Carrinho, renderiza somente a logo principal.
         <Link href='/'>
           <Image
             priority={true}

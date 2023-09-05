@@ -146,8 +146,8 @@ export default function Payment() {
     }
 
     return (
-        <div className={styles.container_payment}>
-            {countCartItems > 0 ?
+        <main className={styles.container_payment}>
+            {countCartItems > 0 ? //Renderiza somente se tiver produtos no carrinho
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className={styles.row}>
                         <div className={styles.col}>
@@ -259,6 +259,6 @@ export default function Payment() {
                 :
                 <span />
             }
-        </div>
+        </main>
     )
 }
