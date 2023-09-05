@@ -130,7 +130,7 @@ export default function Payment() {
             && validNumberHome.test(numberHome)
             && nameCard.length >= 4
             && validNumberCard.test(numberCard)
-            && validityCard.length <= 4
+            && validityCard.length === 5
             && validCvv.test(cvv)) {
 
             const virarString = JSON.stringify([])
