@@ -14,13 +14,14 @@
     justify-content: center;
     background-color: #FFFFFF;
     width: 70%;
-    height: 12vh;
+    height: 7vw;
     border-radius: 8px;
     align-items: center;
 }
 
 .container .cep .total {
     width: 50%;
+    font-size: 1.1vw;
     font-weight: bold;
     justify-content: center; 
     margin: 1% 0 3% 0;

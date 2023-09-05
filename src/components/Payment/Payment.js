@@ -160,7 +160,7 @@ export default function Payment() {
                                     value={name}
                                     onChange={event => setName(event.target.value)}
                                 />
-                                {inputNameErr && <p className={styles.error}>Por favor digite um nome!</p>}
+                                {inputNameErr && <p className={styles.error}>Digite um nome!</p>}
                             </div>
                             <div className={styles.inputBox}>
                                 <span>Email :</span>
@@ -170,7 +170,7 @@ export default function Payment() {
                                     value={email}
                                     onChange={event => setEmail(event.target.value)}
                                 />
-                                {inputEmailErr && <p className={styles.error}>Por favor digite um email valido!</p>}
+                                {inputEmailErr && <p className={styles.error}>Digite um email válido!</p>}
                             </div>
                             <div className={styles.inputBox}>
                                 <span>Endereço :</span>
@@ -217,7 +217,7 @@ export default function Payment() {
                                     value={nameCard}
                                     onChange={event => setNameCard(event.target.value)}
                                 />
-                                {inputNameCardErr && <p className={styles.error}>Por favor digite o nome impresso no cartão!</p>}
+                                {inputNameCardErr && <p className={styles.error}>Digite o nome impresso no cartão!</p>}
                             </div>
                             <div className={styles.inputBox}>
                                 <span>Nº do Cartão :</span>
@@ -228,7 +228,7 @@ export default function Payment() {
                                     value={numberCard}
                                     onChange={handleChangeNumberCard}
                                 />
-                                {inputNumberCardErr && <p className={styles.error}>Por favor digite um cartão valido!</p>}
+                                {inputNumberCardErr && <p className={styles.error}>Digite um cartão válido!</p>}
                             </div>
                             <div className={styles.inputBox}>
                                 <span> Mês/Ano de Validade :</span>
@@ -239,7 +239,7 @@ export default function Payment() {
                                     value={validityCard}
                                     onChange={handleChangeValidity}
                                 />
-                                {inputValidityCardErr && <p className={styles.error}>Selecione a data de validade!</p>}
+                                {inputValidityCardErr && <p className={styles.error}>Digite a data de validade do cartão!</p>}
                             </div>
                             <div className={styles.inputBox}>
                                 <span>CVV :</span>
@@ -250,7 +250,7 @@ export default function Payment() {
                                     value={cvv}
                                     onChange={event => setCvv(event.target.value)}
                                 />
-                                {inputCvvErr && <p className={styles.error}>Por favor digite um CVV valido!</p>}
+                                {inputCvvErr && <p className={styles.error}>Digite o CVV do cartão!</p>}
                             </div>
                         </div>
                     </div>
