@@ -104,9 +104,9 @@ export default function Cart() {
                             </div>
                         )
                     })}
-                    <button className={styles.buttonHome}>
-                        <Link className={styles.linkHome} href='/'>Continuar comprando</Link>
-                    </button>
+                    
+                    <Link href='/' className={styles.buttonHome}>Continuar Comprando</Link>
+                    
                 </section>
                 <section className={styles.secondColumn}>
                     <Freight />
