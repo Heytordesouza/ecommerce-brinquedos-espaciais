@@ -190,7 +190,7 @@
 }
 
 .main .firstColumn .buttonHome {
-    width: 96%;
+    width: 91%;
     padding: 2%;
     font-size: 0.9vw;
     text-align: center;
@@ -198,6 +198,7 @@
     color: #fff;
     cursor: pointer;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 .main .firstColumn .buttonHome:hover {
@@ -206,11 +207,6 @@
 
 .main .firstColumn .buttonHome:active {
     background-color: #4b0082;
-}
-
-.main .firstColumn .buttonHome .linkHome {
-    text-decoration: none;
-    color: #FFFFFF;
 }
 
 .main .secondColumn{
@@ -459,7 +455,7 @@
     }
 
     .main .firstColumn .buttonHome {
-        width: 100%;
+        width: 92%;
         padding: 4%;
         font-size: 3.7vw;
         border-radius: 12px;
