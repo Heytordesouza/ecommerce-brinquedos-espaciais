@@ -113,7 +113,7 @@ export default function Payment() {
             setInputNumberCardErr(false);
         }
 
-        if (validityCard.length === 0) {
+        if (validityCard.length <= 4) {
             setInputValidityCardErr(true);
         } else {
             setInputValidityCardErr(false);
@@ -130,7 +130,7 @@ export default function Payment() {
             && validNumberHome.test(numberHome)
             && nameCard.length >= 4
             && validNumberCard.test(numberCard)
-            && validityCard.length >= 1
+            && validityCard.length <= 4
             && validCvv.test(cvv)) {
 
             const virarString = JSON.stringify([])
