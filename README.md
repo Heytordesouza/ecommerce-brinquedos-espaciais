@@ -28,3 +28,7 @@ O projeto foi desenvolvido com as seguintes tecnologias
 <h3>
     <a href="https://ecommerce-brinquedos-espaciais.vercel.app/"> - Veja o projeto clicando aqui </a>
 </h3>
+
+https://github.com/Heytordesouza/ecommerce-brinquedos-espaciais/assets/111310350/bdab4fdb-a163-4406-8658-449c7bb4d951
+
+
